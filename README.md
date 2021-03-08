@@ -73,18 +73,6 @@ Flixador is a movie searching app for those that want to keep up with the latest
     <img src="" alt="Logo">
   </a>
 
-## Wireframes - Desktop
-
-<a href="https://github.com/stephp23/flixador-react-redux-app">
-    <img src="src\images\desktop.png" alt="Logo">
-  </a>
- 
- ## Wireframes - Tablet
-
- <a href="https://github.com/stephp23/flixador-react-redux-app">
-    <img src="src\images\tablet.png" alt="Logo">
-  </a>
-
 ## Wireframes - Mobile
 
   <a href="https://github.com/stephp23/flixador-react-redux-app">
