@@ -1,4 +1,4 @@
-### 
+###
 
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
@@ -6,32 +6,28 @@
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 
-
-
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
   <a href="https://github.com/stephp23/flixador-react-redux-app">
-    <img src="" alt="Logo">
+    <img src="logo" alt="Logo">
   </a>
 
   <h1 align="center">FLIXADOR</h1>
 
   <p align="center">
-    What movie do you want to watch?
+    What are you in the mood to watch?
     <br />
     <a href="https://github.com/stephp23/flixador-react-redux-app"><strong>🔍Explore the Docs »</strong></a>
     <br />
     <br />
-    <a href="NETLIFYLINK">👀 View Demo</a>
+    <a href="">👀 View Demo</a>
     ·
     <a href="https://github.com/stephp23/flixador-react-redux-app">🐛Report Bug</a>
     ·
     <a href="https://github.com/stephp23/flixador-react-redux-app">✍🏽Request Feature</a>
   </p>
 </p>
-
-
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
@@ -65,123 +61,104 @@
   </ol>
 </details>
 
-
 <!-- ABOUT THE PROJECT -->
 
-## Overview 
+## Overview
 
-## Description 
+## Description
 
-Flixador is a movie searching app for those that want to keep up with the latest in movie releases. 
-
+Flixador is a movie searching app for those that want to keep up with the latest in movie releases.
 
  <a href="https://github.com/stephp23/flixador-react-redux-app">
     <img src="" alt="Logo">
   </a>
 
-
 ## Wireframes - Desktop
 
 <a href="https://github.com/stephp23/flixador-react-redux-app">
-    <img src="" alt="Logo">
+    <img src="src\images\desktop.png" alt="Logo">
   </a>
  
  ## Wireframes - Tablet
 
  <a href="https://github.com/stephp23/flixador-react-redux-app">
-    <img src="" alt="Logo">
+    <img src="src\images\tablet.png" alt="Logo">
   </a>
 
- ## Wireframes - Mobile
-
+## Wireframes - Mobile
 
   <a href="https://github.com/stephp23/flixador-react-redux-app">
-    <img src="" alt="Logo">
+    <img src="src\images\mobile.png" alt="Logo">
   </a>
 
-
-## Component Hierarchy 
+## Component Hierarchy
 
 <a href="https://github.com/stephp23/flixador-react-redux-app">
-    <img src="" alt="Logo">
   </a>
 
-## API 
+## API
 
-We are using the [OMDb API](https://www.omdbapi.com/) which gives the following information:
+We are using the [OMDb (Open Movie Database) API](https://www.omdbapi.com/) which gives the following information:
 
-*  
-* 
-* 
+- Categories include movies, series, or episodes
+- Access to valid IMDb ID numbers for movies and shows
+- Movie or series title to search for
+- Year of release
+- Short or full plot description 
 
-  
-## MVP 
+
+## MVP
 
 The Flixador MVP version will have the following features:
 
-* Responsive design on _desktop, tablet and mobile_
-* Genre category search for movies
-* Keyword search
-* 
+- Responsive design on _desktop, tablet and mobile_
+- Genre category search for movies and shows
+- Side scrolling feature to view category results
+- Title keyword search 
+- Search feature for only movie titles
+- Search feature for only show titles
+- Team information section
 
-## Post MVP 
+## Post MVP
 
 After the Flixador MVP, we will explore adding the following features:
 
-
-* 
-* 
-
-
-## Challenges We Ran Into 
- 
-
-* 
-  
-* 
-
-## Accomplishments 
-
-
-* 
-* 
-
-## What We Learned 
-
-
-* 
-  
-* 
+- In-screen trailer feature
 
 
 <!-- BUILT WITH -->
-## Built With 
 
-This project was conceptualized by building wireframes and prototypes using Figma and Adobe Photoshop We will build this project using React JS, JavaScript, React Redux,Material UI, and Tailwind CSS on the frontend.
+## Built With
 
-* [JavaScript](https://javascript.com)
-* [ReactJS](https://reactjs.org)
-* [OMDb API](https://www.omdbapi.com/)
+This project was conceptualized by building wireframes and prototypes using Figma and Adobe Photoshop We will build this project using React JS, JavaScript, React Redux, CSS, and Material UI on the frontend. Dependencies needed for the project are axios, redux, react-redux, redux-thunk, redux-devtools-extension/developmentOnly. 
+
+
+- [JavaScript](https://javascript.com)
+- [ReactJS](https://reactjs.org)
+- [OMDb API](https://www.omdbapi.com/)
+- [Material IU](https://material-ui.com/)
 
 <!-- ACKNOWLEDGEMENTS -->
+
 ## Acknowledgements
 
-* [Figma](https://www.figma.com/)
-* [Adobe Photoshop](https://www.adobe.com/products/photoshop.html) 
-* [Img Shields](https://shields.io)
-* [FontAwesome](https://fontawesome.com/)
-* [Trello](https://www.trello.com/)
+- [Figma](https://www.figma.com/)
+- [Adobe Photoshop](https://www.adobe.com/products/photoshop.html)
+- [Img Shields](https://shields.io)
+- [FontAwesome](https://fontawesome.com/)
+- [Trello](https://www.trello.com/)
 
 <!-- CONTACT -->
+
 ## Our Team
 
-* Ayman Omer - [LinkedIn](https://www.linkedin.com/in/ayman-omer-b2429b1ab/)
-* Stephanie Pena - [LinkedIn](https://www.linkedin.com/in/stephanieapena/)
-* Katherine Fernandez - [LinkedIn](https://www.linkedin.com/in/katfernandez22/)
-
+- Ayman Omer - [LinkedIn](https://www.linkedin.com/in/ayman-omer-b2429b1ab/)
+- Stephanie Pena - [LinkedIn](https://www.linkedin.com/in/stephanieapena/)
+- Katherine Fernandez - [LinkedIn](https://www.linkedin.com/in/katfernandez22/)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
 [contributors-shield]: https://img.shields.io/github/contributors/stephp23/flixador-react-redux-app
 [contributors-url]: https://github.com/stephp23/flixador-react-redux-app
 [forks-shield]: https://img.shields.io/github/forks/stephp23/flixador-react-redux-app
@@ -192,4 +169,5 @@ This project was conceptualized by building wireframes and prototypes using Figm
 [issues-url]: https://github.com/stephp23/flixador-react-redux-app
 [license-shield]: https://img.shields.io/github/license/stephp23/flixador-react-redux-app
 [license-url]: https://github.com/stephp23/flixador-react-redux-app
-[product-screenshot]: 
+
+
