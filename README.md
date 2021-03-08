@@ -10,7 +10,8 @@
 <br />
 <p align="center">
   <a href="https://github.com/stephp23/flixador-react-redux-app">
-    <img src="logo" alt="Logo">
+    <img src="src\images\baby_cheetah.png" alt="Cheetah">
+    <img src="src\images\banner.png" alt="Logo">
   </a>
 
   <h1 align="center">FLIXADOR</h1>
@@ -67,10 +68,22 @@
 
 ## Description
 
-Flixador is a movie searching app for those that want to keep up with the latest in movie releases.
+Flixador is a movie searching app for those that want to keep up with the latest in movie releases. You can scroll through hundreds of movies and series titles right from the home screen. In the mood to only watch a series or only movies. You can also browse through hundreds of titles and their descriptions!
 
  <a href="https://github.com/stephp23/flixador-react-redux-app">
-    <img src="" alt="Logo">
+    <img src="src\images\banner.png" alt="Logo">
+  </a>
+
+## Wireframes - Desktop
+
+<a href="https://github.com/stephp23/flixador-react-redux-app">
+    <img src="src\images\desktop.png" alt="Logo">
+  </a>
+ 
+ ## Wireframes - Tablet
+
+ <a href="https://github.com/stephp23/flixador-react-redux-app">
+    <img src="src\images\tablet.png" alt="Logo">
   </a>
 
 ## Wireframes - Mobile
@@ -82,6 +95,7 @@ Flixador is a movie searching app for those that want to keep up with the latest
 ## Component Hierarchy
 
 <a href="https://github.com/stephp23/flixador-react-redux-app">
+  <img src="src/images/componenthierarchy.png" alt="ComponentHierachy">
   </a>
 
 ## API
@@ -118,7 +132,7 @@ After the Flixador MVP, we will explore adding the following features:
 
 ## Built With
 
-This project was conceptualized by building wireframes and prototypes using Figma and Adobe Photoshop We will build this project using React JS, JavaScript, React Redux, CSS, and Material UI on the frontend. Dependencies needed for the project are axios, redux, react-redux, redux-thunk, redux-devtools-extension/developmentOnly. 
+This project was conceptualized by building wireframes and prototypes using Figma and Adobe Photoshop We will build this project using React JS, JavaScript, React Redux, React Native, and CSS on the frontend. Dependencies needed for the project are axios, redux, react-redux, redux-thunk, redux-devtools-extension/developmentOnly. 
 
 
 - [JavaScript](https://javascript.com)
