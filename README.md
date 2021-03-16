@@ -10,8 +10,8 @@
 <br />
 <p align="center">
   <a href="https://github.com/stephp23/flixador-react-redux-app">
-    <img src="src\images\baby_cheetah.png" alt="Cheetah">
-    <img src="src\images\banner.png" alt="Logo">
+    <img src="src\imagesREADME\baby_cheetah.png" alt="Cheetah">
+    <img src="src\imagesREADME\banner.png" alt="Logo">
   </a>
 
   <h1 align="center">FLIXADOR</h1>
@@ -71,36 +71,36 @@
 Flixador is a movie searching app for those that want to keep up with the latest in movie releases. You can scroll through hundreds of movies and series titles right from the home screen. In the mood to only watch a series or only movies. You can also browse through hundreds of titles and their descriptions!
 
  <a href="https://github.com/stephp23/flixador-react-redux-app">
-    <img src="src\images\banner.png" alt="Logo">
+    <img src="src\imagesREADME\banner.png" alt="Logo">
   </a>
 
 ## Wireframes - Desktop
 
 <a href="https://github.com/stephp23/flixador-react-redux-app">
-    <img src="src\images\desktop.png" alt="Logo">
+    <img src="src\imagesREADME\desktop.png" alt="Logo">
   </a>
  
  ## Wireframes - Tablet
 
  <a href="https://github.com/stephp23/flixador-react-redux-app">
-    <img src="src\images\tablet.png" alt="Logo">
+    <img src="src\imagesREADME\tablet.png" alt="Logo">
   </a>
 
 ## Wireframes - Mobile
 
   <a href="https://github.com/stephp23/flixador-react-redux-app">
-    <img src="src\images\mobileapp.png" alt="Logo">
+    <img src="src\imagesREADME\mobileapp.png" alt="Logo">
   </a>
 
 ## Component Hierarchy
 
 <a href="https://github.com/stephp23/flixador-react-redux-app">
-  <img src="src/images/componenthierarchy.png" alt="ComponentHierachy">
+  <img src="src/imagesREADME/componenthierarchy.png" alt="ComponentHierachy">
   </a>
 
 ## API
 
-We are using the [OMDb (Open Movie Database) API](https://www.omdbapi.com/) which gives the following information:
+We are using the [themoviedbAPI](https://www.themoviedb.org/documentation/api) which gives the following information:
 
 - Categories include movies, series, or episodes
 - Access to valid IMDb ID numbers for movies and shows
@@ -137,8 +137,7 @@ This project was conceptualized by building wireframes and prototypes using Figm
 
 - [JavaScript](https://javascript.com)
 - [ReactJS](https://reactjs.org)
-- [OMDb API](https://www.omdbapi.com/)
-- [Material UI](https://material-ui.com/)
+- [themoviedbAPI](https://www.themoviedb.org/documentation/api)
 
 <!-- ACKNOWLEDGEMENTS -->
 
@@ -148,7 +147,6 @@ This project was conceptualized by building wireframes and prototypes using Figm
 - [Adobe Photoshop](https://www.adobe.com/products/photoshop.html)
 - [Img Shields](https://shields.io)
 - [FontAwesome](https://fontawesome.com/)
-- [Trello](https://www.trello.com/)
 
 <!-- CONTACT -->
 
@@ -157,6 +155,8 @@ This project was conceptualized by building wireframes and prototypes using Figm
 - Ayman Omer - [LinkedIn](https://www.linkedin.com/in/ayman-omer-b2429b1ab/)
 - Stephanie Pena - [LinkedIn](https://www.linkedin.com/in/stephanieapena/)
 - Katherine Fernandez - [LinkedIn](https://www.linkedin.com/in/katfernandez22/)
+- Leesel Fraser - [LinkedIn](https://www.linkedin.com/in/leesel/)
+
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
