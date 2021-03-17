@@ -6,7 +6,6 @@ import NewReleases from "./components/NewReleases/NewReleases";
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>How are you </Text>
       <NewReleases />
       <StatusBar style="auto" />
     </View>
@@ -16,7 +15,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#111",
     alignItems: "center",
     justifyContent: "center",
   },
