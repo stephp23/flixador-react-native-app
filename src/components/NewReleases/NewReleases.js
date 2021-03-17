@@ -2,7 +2,13 @@ import React, { useState, useEffect } from "react";
 import config from "../../../config";
 import axios from "axios";
 
-import { Text, View, Image, ScrollView } from "react-native";
+import {
+  Text,
+  View,
+  Image,
+  ScrollView,
+  TouchableHighlight,
+} from "react-native";
 import styles from "./styleNewReleases";
 const imgUrl = "https://image.tmdb.org/t/p/original";
 const NewReleases = () => {
@@ -31,12 +37,16 @@ const NewReleases = () => {
         >
           {newRelease.map((moviesNewReleses, index) => {
             return (
-              <Image
-                key={index}
-                style={{ transform: "scale: 4.1" }}
-                style={styles.row_poster}
-                source={{ uri: `${imgUrl}${moviesNewReleses.poster_path}` }}
-              />
+              <TouchableHighlight
+                onPress={() => console.log(moviesNewReleses.id)}
+              >
+                <Image
+                  key={index}
+                  style={{ transform: "scale: 4.1" }}
+                  style={styles.row_poster}
+                  source={{ uri: `${imgUrl}${moviesNewReleses.poster_path}` }}
+                />
+              </TouchableHighlight>
             );
           })}
         </ScrollView>
