@@ -30,13 +30,13 @@ const ActionAdventure = () => {
           decelerationRate="slow"
           pagingEnabled
         >
-          {actionAdventureMovies.map((moviesActionAdventure, index) => {
+          {actionAdventureMovies.map((moviesActionAdven, index) => {
             return (
               <Image
                 key={index}
                 style={{ transform: "scale: 4.1" }}
                 style={styles.row_poster}
-                source={{ uri: `${imgUrl}${moviesActionAdventure.poster_path}` }}
+                source={{ uri: `${imgUrl}${moviesActionAdven.poster_path}` }}
               />
             );
           })}
