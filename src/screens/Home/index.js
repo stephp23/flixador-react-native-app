@@ -14,7 +14,6 @@ const Home = () => {
         pagingEnabled
       >
         <NewReleases />
-        <View></View>
       </ScrollView>
     </View>
   );
@@ -24,7 +23,8 @@ export default Home;
 
 const styles = StyleSheet.create({
   root: {
-    flex: 2,
+    flex: 1,
+    marginTop: 300,
     backgroundColor: "#f5f5f5",
     alignItems: "center",
     justifyContent: "center",

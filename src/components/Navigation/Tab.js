@@ -9,9 +9,9 @@ const Tab = ({ color, tab, onPress, icon }) => {
   console.log(icon);
   return (
     <TouchableOpacity style={styles.container} onPress={onPress}>
-      {icon && <AntDesign name={icon} size={20} color={color} /> && icon && (
+      {(<AntDesign name={icon} size={20} color={color} /> && icon && (
         <Entypo name={icon} size={20} color={color} />
-      )}
+      )) || <AntDesign name={icon} size={20} color={color} />}
 
       {/* icon && */}
       {/*  */}
