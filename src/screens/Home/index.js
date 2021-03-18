@@ -1,5 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, View, ScrollView } from "react-native";
+import ChildrenFamily from "../../components/ChildrenFamily/ChildrenFamily";
 import NewReleases from "../../components/NewReleases/NewReleases";
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
         pagingEnabled
       >
         <NewReleases />
+        <ChildrenFamily />
       </ScrollView>
     </View>
   );
