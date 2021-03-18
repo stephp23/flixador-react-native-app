@@ -9,22 +9,22 @@ import {
   ScrollView,
   TouchableHighlight,
 } from "react-native";
-import styles from "./styleTopRatedMov";
+import styles from "./styleScifiHorror";
 const imgUrl = "https://image.tmdb.org/t/p/original";
-const TopRatedMov = () => {
-  const [topRatedMov, setTopRatedMov] = useState([]);
-  const fetchTopRatedMov = async () => {
-    let URL = `https://api.themoviedb.org/3/movie/top_rated?api_key=${config.APIKEY}&language=en-US&page=1`;
+const ScifiHorror = () => {
+  const [scifiHorror, setScifiHorror] = useState([]);
+  const fetchScifiHorror = async () => {
+    let URL = `https://api.themoviedb.org/3/discover/tv?api_key=${config.APIKEY}&with_networks=213`;
     let response = await axios.get(URL);
-    setTopRatedMov(response.data.results);
+    setScifiHorror(response.data.results);
   };
 
   useEffect(() => {
-    fetchTopRatedMov();
+    fetchScifiHorror();
   }, []);
   return (
     <View style={styles.row1}>
-      <Text style={styles.text}>Top Rated Movies</Text>
+      <Text style={styles.text}>Scifi & Horror</Text>
 
       <View style={styles.row_posters}>
         <ScrollView
@@ -35,10 +35,10 @@ const TopRatedMov = () => {
           decelerationRate="slow"
           pagingEnabled
         >
-          {topRatedMov.map((topRatedMov, index) => {
+          {scifiHorror.map((moviesScifiHorror, index) => {
             return (
               <TouchableHighlight
-                onPress={() => console.log(topRatedMov.id)}
+                onPress={() => console.log(moviesScifiHorror.id)}
                 key={index}
                 style={{
                   borderRadius: 28,
@@ -51,7 +51,7 @@ const TopRatedMov = () => {
                 <Image
                   style={{ transform: "scale: 4.1" }}
                   style={styles.row_poster}
-                  source={{ uri: `${imgUrl}${topRatedMov.poster_path}` }}
+                  source={{ uri: `${imgUrl}${moviesScifiHorror.poster_path}` }}
                 />
               </TouchableHighlight>
             );
@@ -62,4 +62,4 @@ const TopRatedMov = () => {
   );
 };
 
-export default TopRatedMov;
+export default ScifiHorror;

@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet, Text, View, ScrollView } from "react-native";
 import ChildrenFamily from "../../components/ChildrenFamily/ChildrenFamily";
 import NewReleases from "../../components/NewReleases/NewReleases";
+import ScifiHorror from "../../components/ScifiHorror/ScifiHorror";
 import TopRatedMov from "../../components/TopRatedMov/TopRatedMov";
 
 const Home = () => {
@@ -17,6 +18,7 @@ const Home = () => {
       >
         <NewReleases />
         <TopRatedMov />
+        <ScifiHorror />
         <ChildrenFamily />
       </ScrollView>
     </View>
