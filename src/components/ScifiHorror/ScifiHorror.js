@@ -9,22 +9,22 @@ import {
   ScrollView,
   TouchableHighlight,
 } from "react-native";
-import styles from "./styleChildrenFamily";
+import styles from "./styleScifiHorror";
 const imgUrl = "https://image.tmdb.org/t/p/original";
-const ChildrenFamily = () => {
-  const [childrenFamily, setChildrenFamily] = useState([]);
-  const fetchChildrenFamily = async () => {
-    let URL = `https://api.themoviedb.org/3/discover/movie?api_key=${config.APIKEY}&with_genres=10749`;
+const ScifiHorror = () => {
+  const [scifiHorror, setScifiHorror] = useState([]);
+  const fetchScifiHorror = async () => {
+    let URL = `https://api.themoviedb.org/3/discover/tv?api_key=${config.APIKEY}&with_networks=213`;
     let response = await axios.get(URL);
-    setChildrenFamily(response.data.results);
+    setScifiHorror(response.data.results);
   };
 
   useEffect(() => {
-    fetchChildrenFamily();
+    fetchScifiHorror();
   }, []);
   return (
     <View style={styles.row1}>
-      <Text style={styles.text}>Children & Family</Text>
+      <Text style={styles.text}>Scifi & Horror</Text>
 
       <View style={styles.row_posters}>
         <ScrollView
@@ -35,10 +35,10 @@ const ChildrenFamily = () => {
           decelerationRate="slow"
           pagingEnabled
         >
-          {childrenFamily.map((moviesChildrenFamily, index) => {
+          {scifiHorror.map((moviesScifiHorror, index) => {
             return (
               <TouchableHighlight
-                onPress={() => console.log(moviesChildrenFamily.id)}
+                onPress={() => console.log(moviesScifiHorror.id)}
                 key={index}
                 style={{
                   borderRadius: 28,
@@ -51,7 +51,7 @@ const ChildrenFamily = () => {
                 <Image
                   style={{ transform: "scale: 4.1" }}
                   style={styles.row_poster}
-                  source={{ uri: `${imgUrl}${moviesChildrenFamily.poster_path}` }}
+                  source={{ uri: `${imgUrl}${moviesScifiHorror.poster_path}` }}
                 />
               </TouchableHighlight>
             );
@@ -62,4 +62,4 @@ const ChildrenFamily = () => {
   );
 };
 
-export default ChildrenFamily;
+export default ScifiHorror;
