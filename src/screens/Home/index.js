@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet, Text, View, ScrollView } from "react-native";
 import ChildrenFamily from "../../components/ChildrenFamily/ChildrenFamily";
 import NewReleases from "../../components/NewReleases/NewReleases";
+import TopRatedMov from "../../components/TopRatedMov/TopRatedMov";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
         pagingEnabled
       >
         <NewReleases />
+        <TopRatedMov />
         <ChildrenFamily />
       </ScrollView>
     </View>

@@ -14,7 +14,7 @@ const imgUrl = "https://image.tmdb.org/t/p/original";
 const ChildrenFamily = () => {
   const [childrenFamily, setChildrenFamily] = useState([]);
   const fetchChildrenFamily = async () => {
-    let URL = `https://api.themoviedb.org/3/trending/all/week?api_key=${config.APIKEY}&language=en-US`;
+    let URL = `https://api.themoviedb.org/3/discover/movie?api_key=${config.APIKEY}&with_genres=10749`;
     let response = await axios.get(URL);
     setChildrenFamily(response.data.results);
   };
