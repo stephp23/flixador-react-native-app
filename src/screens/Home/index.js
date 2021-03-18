@@ -14,6 +14,7 @@ const Home = () => {
         pagingEnabled
       >
         <NewReleases />
+        <View></View>
       </ScrollView>
     </View>
   );
