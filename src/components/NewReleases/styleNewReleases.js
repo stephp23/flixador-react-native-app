@@ -23,10 +23,11 @@ const styles = StyleSheet.create({
   },
 
   text: {
-    color: "white",
+    color: "#111",
     marginLeft: 20,
     fontSize: 25,
     marginBottom: 20,
+    marginTop: 20,
   },
 });
 

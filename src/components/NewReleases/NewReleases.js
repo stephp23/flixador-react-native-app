@@ -39,9 +39,16 @@ const NewReleases = () => {
             return (
               <TouchableHighlight
                 onPress={() => console.log(moviesNewReleses.id)}
+                key={index}
+                style={{
+                  borderRadius: 28,
+                  marginRight: 10,
+                  resizeMode: "contain",
+                  height: 230,
+                  width: 150,
+                }}
               >
                 <Image
-                  key={index}
                   style={{ transform: "scale: 4.1" }}
                   style={styles.row_poster}
                   source={{ uri: `${imgUrl}${moviesNewReleses.poster_path}` }}
