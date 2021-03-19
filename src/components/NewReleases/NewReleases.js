@@ -44,8 +44,8 @@ const NewReleases = () => {
                   borderRadius: 28,
                   marginRight: 10,
                   resizeMode: "contain",
-                  height: 230,
-                  width: 150,
+                  height: 130,
+                  width: 90,
                 }}
               >
                 <Image

@@ -41,11 +41,13 @@ const TopRatedMov = () => {
                 onPress={() => console.log(topRatedMov.id)}
                 key={index}
                 style={{
-                  borderRadius: 28,
+                  borderRadius: 32,
                   marginRight: 10,
-                  resizeMode: "contain",
-                  height: 230,
-                  width: 150,
+                  // resizeMode: "contain",
+                  height: 182,
+                  width: 130,
+                  padding: 2,
+                  margin: 0,
                 }}
               >
                 <Image

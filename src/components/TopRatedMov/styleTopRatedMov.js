@@ -6,20 +6,23 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     // fontSize: 2,
     color: "white",
+    paddingTop: 20,
   },
   row_posters: {
     display: "flex",
     flexDirection: "row",
-    justifyContent: "space-between",
-    overflow: "hidden",
-    margin: 5,
+    // justifyContent: "space-evenly",
+    //  justifyContent: "space",
+    // overflow: "hidden",
+    // margin: 0 - 20 - 10,
+    margin: 0 - 20,
   },
   row_poster: {
     resizeMode: "contain",
-    height: 230,
-    width: 150,
-    marginRight: 10,
-    borderRadius: 28,
+    height: 180,
+    width: 130,
+
+    borderRadius: 40,
   },
 
   text: {
