@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import config from "../../../config";
 import axios from "axios";
 import {
+  ImageBackground,
   Text,
   View,
   Image,
@@ -9,14 +10,12 @@ import {
   TouchableHighlight,
 } from "react-native";
 
-import styles from "./styleBanar";
-
 const Banar = () => {
   const [banar, setBanar] = useState([]);
   const [banartrailerUrl, setBanarTrailerUrl] = useState("");
   const handelBaner = async () => {
     const response = await axios.get(
-      `https://api.themoviedb.org/3/discover/tv?api_key=${process.env.REACT_APP_APIKEY}&with_networks=213`
+      `https://api.themoviedb.org/3/discover/tv?api_key=${config.APIKEY}&with_networks=213`
     );
 
     setBanar(
@@ -32,12 +31,29 @@ const Banar = () => {
     }, 5000);
     return () => clearInterval(interval);
   }, []);
-
-  // const Poster =
-
+  console.log(banar);
+  const image = {
+    uri: `https://image.tmdb.org/t/p/original${banar?.backdrop_path}`,
+  };
   return (
     <View>
-      <Text>HEY</Text>
+      <ImageBackground
+        resizeMode="cover"
+        source={image}
+        style={{ width: "100%", height: 520 }}
+      ></ImageBackground>
+      {/* <Image
+        resizeMode="cover"
+        style={{
+          width: "100%",
+          height: 520,
+          //   ,
+          padding: 0,
+        }}
+        source={{
+          uri: `https://image.tmdb.org/t/p/original${banar?.backdrop_path}`,
+        }}
+      /> */}
     </View>
   );
 };
