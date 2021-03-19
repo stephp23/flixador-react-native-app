@@ -24,7 +24,7 @@ export default Home;
 const styles = StyleSheet.create({
   root: {
     flex: 1,
-    marginTop: 300,
+    marginTop: 20,
     backgroundColor: "#f5f5f5",
     alignItems: "center",
     justifyContent: "center",

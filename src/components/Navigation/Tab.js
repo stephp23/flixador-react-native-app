@@ -6,22 +6,14 @@ import { Entypo } from "@expo/vector-icons";
 import { Feather } from "@expo/vector-icons";
 
 const Tab = ({ color, tab, onPress, icon }) => {
-  console.log(icon);
   return (
     <TouchableOpacity style={styles.container} onPress={onPress}>
-      {(<AntDesign name={icon} size={20} color={color} /> && icon && (
-        <Entypo name={icon} size={20} color={color} />
-      )) || <AntDesign name={icon} size={20} color={color} />}
-
-      {/* icon && */}
-      {/*  */}
-      {/* 
-
-        ) && <Entypo name={icon} size={20} color={color} />
-      <Feather name={icon} size={20} color={color} />?
-      <AntDesign name={icon} size={20} color={color} /> */}
-      {/* <AntDesign name={icon} size={20} color={color} /> */}
-      {/* <AntDesign name={icon} size={20} color={color} /> */}
+      {icon === "home" && <AntDesign name={icon} size={25} color={color} />}
+      {icon === "folder-video" && (
+        <Entypo name={icon} size={25} color={color} />
+      )}
+      {icon === "tv" && <Feather name={icon} size={25} color={color} />}
+      {icon === "team" && <AntDesign name={icon} size={20} color={color} />}
     </TouchableOpacity>
   );
 };
@@ -33,6 +25,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    padding: 5,
+    padding: 8,
   },
 });
