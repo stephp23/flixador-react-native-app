@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import config from "../../../config";
 import styled from "styled-components/native";
 import axios from "axios";
+import ButtonStyle from "./ButtonStyle/ButtonStyle";
 import {
   ImageBackground,
   Text,
@@ -69,7 +70,9 @@ const Banar = () => {
           </Text>
         </View>
 
-        <View tyle={styles.banarbuttons}></View>
+        <View tyle={styles.banarbuttons}>
+          <ButtonStyle text="Play" color="rgba(51, 51, 51, 0.5)	" />
+        </View>
       </ImageBackground>
 
       {/* <Image
