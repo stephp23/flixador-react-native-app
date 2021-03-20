@@ -39,6 +39,7 @@ const NewReleases = () => {
             return (
               <TouchableHighlight
                 onPress={() => console.log(moviesNewReleses.id)}
+                // onPress={() => navigation.navigate("movie")}
                 key={index}
                 style={{
                   borderRadius: 28,

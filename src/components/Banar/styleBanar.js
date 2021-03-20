@@ -23,6 +23,11 @@ const styles = StyleSheet.create({
     marginLeft: 20,
     marginTop: 20,
   },
+  video: {
+    alignSelf: "center",
+    width: 320,
+    height: 200,
+  },
 });
 
 export default styles;
