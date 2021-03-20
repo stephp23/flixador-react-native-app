@@ -23,3 +23,10 @@ export const MoviesStackScreen = () => {
     </MoviesStack.Navigator>
   );
 };
+export const TvShowsStackScreen = () => {
+  return (
+    <TvShowsStack.Navigator screenOptions={{ headerShown: false }}>
+      <HomeStack.Screen name="TvShows" component={TvShows} />
+    </TvShowsStack.Navigator>
+  );
+};
