@@ -30,3 +30,10 @@ export const TvShowsStackScreen = () => {
     </TvShowsStack.Navigator>
   );
 };
+export const TeamStackScreen = () => {
+  return (
+    <TeamStack.Navigator screenOptions={{ headerShown: false }}>
+      <HomeStack.Screen name="Team" component={Team} />
+    </TeamStack.Navigator>
+  );
+};
