@@ -15,6 +15,12 @@ const styles = StyleSheet.create({
     fontWeight: "500",
     paddingBottom: 4.8,
   },
+  banarDescription: {
+    color: "white",
+    width: "30%",
+    marginLeft: 20,
+    marginTop: 20,
+  },
 });
 
 export default styles;
