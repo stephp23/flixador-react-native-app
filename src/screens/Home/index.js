@@ -10,12 +10,11 @@ const Home = () => {
   return (
     <View style={styles.root}>
       <ScrollView
-        horizontal={false}
-        contentContainerStyle={{}}
-        showsHorizontalScrollIndicator={false}
-        scrollEventThrottle={120}
-        decelerationRate="fast"
-        pagingEnabled
+      // contentContainerStyle={{}}
+      // showsHorizontalScrollIndicator={false}
+      // scrollEventThrottle={120}
+      // decelerationRate="fast"
+      // pagingEnabled
       >
         <Banar />
         <NewReleases />

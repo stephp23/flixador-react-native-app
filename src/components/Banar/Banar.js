@@ -45,52 +45,39 @@ const Banar = () => {
     uri: `https://image.tmdb.org/t/p/original${banar?.backdrop_path}`,
   };
   return (
-    <View style={styles.banar}>
-      <ImageBackground
-        resizeMode="cover"
-        source={image}
+    // <View style={styles.banar}>
+    <ImageBackground
+      resizeMode="contian"
+      source={image}
+      style={{
+        height: 450,
+        width: 375,
+      }}
+    >
+      <LinearGradient
+        locations={[0, 1.0]}
+        colors={["rgba(0,0,0,0.00)", "rgba(0,0,0,0.80)"]}
         style={{
+          position: "absolute",
+          bottom: 0,
           width: "100%",
-          height: 450,
+          height: 118,
         }}
-      >
-        <LinearGradient
-          locations={[0, 1.0]}
-          colors={["rgba(0,0,0,0.00)", "rgba(0,0,0,0.80)"]}
-          style={{
-            position: "absolute",
-            bottom: 0,
-            width: "100%",
-            height: 118,
-          }}
-        />
-        <View style={styles.banarinfo}>
-          <Text style={styles.title}>
-            {banar?.title || banar?.name || banar?.orignal_name}
-          </Text>
-        </View>
+      />
+      <View style={styles.banarinfo}>
+        <Text style={styles.title}>
+          {banar?.title || banar?.name || banar?.orignal_name}
+        </Text>
+      </View>
 
-        <View tyle={styles.banarbuttons}>
-          <ButtonStyle text="Play" color="rgba(51, 51, 51, 0.5)	" />
-          <Text style={styles.banarDescription}>
-            {truncate(banar?.overview, 150)}
-          </Text>
-        </View>
-      </ImageBackground>
-
-      {/* <Image
-        resizeMode="cover"
-        style={{
-          width: "100%",
-          height: 520,
-          //   ,
-          padding: 0,
-        }}
-        source={{
-          uri: `https://image.tmdb.org/t/p/original${banar?.backdrop_path}`,
-        }}
-      /> */}
-    </View>
+      <View tyle={styles.banarbuttons}>
+        <ButtonStyle text="Play" color="rgba(51, 51, 51, 0.5)	" />
+        <Text style={styles.banarDescription}>
+          {truncate(banar?.overview, 150)}
+        </Text>
+      </View>
+    </ImageBackground>
+    // </View>
   );
 };
 
