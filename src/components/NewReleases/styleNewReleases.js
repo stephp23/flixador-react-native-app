@@ -12,14 +12,14 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     overflow: "hidden",
-    margin: 0,
+    margin: 5,
   },
   row_poster: {
     resizeMode: "contain",
-    height: 130,
-    width: 90,
+    height: 230,
+    width: 150,
     marginRight: 10,
-    borderRadius: 20,
+    borderRadius: 28,
   },
 
   text: {
