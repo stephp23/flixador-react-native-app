@@ -3,6 +3,8 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   banar: {
     flex: 1,
+    alignItems: "center",
+    alignContent: "center",
   },
   banarinfo: {
     marginLeft: 40,
@@ -11,15 +13,20 @@ const styles = StyleSheet.create({
   },
   title: {
     color: "white",
-    fontSize: 35,
-    fontWeight: "500",
+    fontSize: 25,
+    fontWeight: "600",
     paddingBottom: 4.8,
   },
   banarDescription: {
     color: "white",
-    width: "30%",
+    width: "70%",
     marginLeft: 20,
     marginTop: 20,
+  },
+  video: {
+    alignSelf: "center",
+    width: 320,
+    height: 200,
   },
 });
 
