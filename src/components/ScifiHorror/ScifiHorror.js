@@ -9,22 +9,22 @@ import {
   ScrollView,
   TouchableHighlight,
 } from "react-native";
-import styles from "./styleNewReleases";
+import styles from "./styleScifiHorror";
 const imgUrl = "https://image.tmdb.org/t/p/original";
-const NewReleases = () => {
-  const [newRelease, setNewRelease] = useState([]);
-  const fetchNewRelease = async () => {
-    let URL = `https://api.themoviedb.org/3/trending/all/week?api_key=${config.APIKEY}&language=en-US`;
+const ScifiHorror = () => {
+  const [scifiHorror, setScifiHorror] = useState([]);
+  const fetchScifiHorror = async () => {
+    let URL = `https://api.themoviedb.org/3/discover/tv?api_key=${config.APIKEY}&with_networks=213`;
     let response = await axios.get(URL);
-    setNewRelease(response.data.results);
+    setScifiHorror(response.data.results);
   };
 
   useEffect(() => {
-    fetchNewRelease();
+    fetchScifiHorror();
   }, []);
   return (
     <View style={styles.row1}>
-      <Text style={styles.text}>New Releases</Text>
+      <Text style={styles.text}>Scifi & Horror</Text>
 
       <View style={styles.row_posters}>
         <ScrollView
@@ -35,10 +35,10 @@ const NewReleases = () => {
           decelerationRate="slow"
           pagingEnabled
         >
-          {newRelease.map((moviesNewReleses, index) => {
+          {scifiHorror.map((moviesScifiHorror, index) => {
             return (
               <TouchableHighlight
-                onPress={() => console.log(moviesNewReleses.id)}
+                onPress={() => console.log(moviesScifiHorror.id)}
                 key={index}
                 style={{
                   borderRadius: 28,
@@ -51,7 +51,7 @@ const NewReleases = () => {
                 <Image
                   style={{ transform: "scale: 4.1" }}
                   style={styles.row_poster}
-                  source={{ uri: `${imgUrl}${moviesNewReleses.poster_path}` }}
+                  source={{ uri: `${imgUrl}${moviesScifiHorror.poster_path}` }}
                 />
               </TouchableHighlight>
             );
@@ -62,4 +62,4 @@ const NewReleases = () => {
   );
 };
 
-export default NewReleases;
+export default ScifiHorror;
