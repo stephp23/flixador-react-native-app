@@ -37,9 +37,9 @@ const Banar = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const Gradient = styled(LinearGradient)`
-    height: 100%;
-  `;
+  const truncate = (str, n) => {
+    return str?.length > n ? str.substr(0, n - 1) + "..." : str;
+  };
 
   const image = {
     uri: `https://image.tmdb.org/t/p/original${banar?.backdrop_path}`,
@@ -72,6 +72,9 @@ const Banar = () => {
 
         <View tyle={styles.banarbuttons}>
           <ButtonStyle text="Play" color="rgba(51, 51, 51, 0.5)	" />
+          <Text style={styles.banarDescription}>
+            {truncate(banar?.overview, 150)}
+          </Text>
         </View>
       </ImageBackground>
 
