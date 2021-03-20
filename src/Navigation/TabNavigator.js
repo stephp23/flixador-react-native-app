@@ -1,11 +1,13 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { StyleSheet, Text, View } from "react-native";
-import Home from "../../screens/Home";
-import Movies from "../../screens/Movies";
-import TvShows from "../../screens/TvShows";
-import Team from "../../screens/Team";
 import TabBar from "./TabBar";
+import {
+  HomeStackScreen as Home,
+  MoviesStackScreen as Movies,
+  TvShowsStackScreen as TvShows,
+  TeamStackScreen as Team,
+} from "./Stack/StackScreen";
 
 const Tab = createBottomTabNavigator();
 const TabNavigator = () => {
