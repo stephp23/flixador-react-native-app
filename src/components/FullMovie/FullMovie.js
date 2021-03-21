@@ -1,14 +1,12 @@
 import React from "react";
 import { StyleSheet, Text, View, Button } from "react-native";
 
-const StyleFullMovie = ({ navigation }) => {
+const StyleFullMovie = ({ route: { params } }) => {
+  const { id } = params;
+  ///{}
   return (
     <View style={styles.root}>
-      <Text> hey this is full movie </Text>
-      <Button
-        title="go back home "
-        onPress={() => navigation.navigate("movie")}
-      />
+      <Text> hey this is full movie : {id}</Text>
     </View>
   );
 };

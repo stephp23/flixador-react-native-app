@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import Home from "../../screens/Home";
 import Movies from "../../screens/Movies";
@@ -13,16 +13,29 @@ const TeamStack = createStackNavigator();
 const TvShowsStack = createStackNavigator();
 
 export const HomeStackScreen = () => {
+  const [getMovieId, setGetMovieId] = useState(0);
+  const [getTvShowId, setGetTvShowId] = useState(0);
+
   return (
     <HomeStack.Navigator
       screenOptions={{
         headerTransparent: true,
         title: "",
-        color: 'color="#fff"',
       }}
     >
-      <HomeStack.Screen name="Home" component={Home} />
-      <HomeStack.Screen name="movie" component={FullMovie} />
+      <HomeStack.Screen
+        name="Home"
+        getMovieId={getMovieId}
+        setGetMovieId={setGetMovieId}
+        component={Home}
+      />
+
+      <HomeStack.Screen
+        name="movie"
+        getMovieId={getMovieId}
+        setGetMovieId={setGetMovieId}
+        component={FullMovie}
+      />
     </HomeStack.Navigator>
   );
 };
@@ -47,10 +60,3 @@ export const TeamStackScreen = () => {
     </TeamStack.Navigator>
   );
 };
-// export const FullMovieStackScreen = () => {
-//   return (
-//     <FullMovieStack.Navigator screenOptions={{ headerShown: false }}>
-//       <FullMovie.Screen name="FullMovie" component={FullMovie} />
-//     </FullMovieStack.Navigator>
-//   );
-// };

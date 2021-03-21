@@ -48,7 +48,6 @@ const Banar = () => {
         .catch(() => console.log("Temporary Unavailable"));
     }
   };
-  console.log(banartrailerUrl);
 
   const image = {
     uri: `https://image.tmdb.org/t/p/original${banar?.backdrop_path}`,
