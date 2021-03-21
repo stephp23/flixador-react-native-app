@@ -23,11 +23,15 @@ const Home = ({ navigation }) => {
       >
         <Banar />
         <NewReleases navigation={navigation} />
-        <TopRatedMov />
-        <MostPopularMov />
-        <Comedy />
-        <ScifiHorror />
-        <ChildrenFamily />
+
+        <TopRatedMov navigation={navigation} />
+        <MostPopularMov navigation={navigation} />
+        <ScifiHorror navigation={navigation} />
+        <ChildrenFamily navigation={navigation} />
+           <Comedy />
+      
+       
+
       </ScrollView>
     </View>
   );

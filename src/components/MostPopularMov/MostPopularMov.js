@@ -11,7 +11,7 @@ import {
 } from "react-native";
 import styles from "./styleMostPopularMov";
 const imgUrl = "https://image.tmdb.org/t/p/original";
-const MostPopularMov = () => {
+const MostPopularMov = ({ navigation: { navigate } }) => {
   const [mostPopularMov, setMostPopularMov] = useState([]);
   const fetchMostPopularMov = async () => {
     let URL = `https://api.themoviedb.org/3/movie/popular?api_key=${config.APIKEY}&language=en-US&page=1`;
@@ -38,7 +38,7 @@ const MostPopularMov = () => {
           {mostPopularMov.map((moviesMostPopular, index) => {
             return (
               <TouchableHighlight
-                onPress={() => console.log(moviesMostPopular.id)}
+                onPress={() => navigate("movie", moviesMostPopular)}
                 key={index}
                 style={{
                   borderRadius: 28,
