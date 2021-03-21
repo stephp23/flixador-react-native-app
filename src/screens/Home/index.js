@@ -2,12 +2,15 @@ import React from "react";
 import { StyleSheet, Text, View, ScrollView } from "react-native";
 import Banar from "../../components/Banar/Banar";
 import ChildrenFamily from "../../components/ChildrenFamily/ChildrenFamily";
+import Comedy from "../../components/Comedy/Comedy";
 import MostPopularMov from "../../components/MostPopularMov/MostPopularMov";
 import NewReleases from "../../components/NewReleases/NewReleases";
 import ScifiHorror from "../../components/ScifiHorror/ScifiHorror";
 import TopRatedMov from "../../components/TopRatedMov/TopRatedMov";
+import { createStackNavigator } from "@react-navigation/stack";
+import FullMovie from "../../components/FullMovie/FullMovie";
 
-const Home = () => {
+const Home = ({ navigation }) => {
   return (
     <View style={styles.root}>
       <ScrollView
@@ -19,9 +22,10 @@ const Home = () => {
         pagingEnabled
       >
         <Banar />
-        <NewReleases />
+        <NewReleases navigation={navigation} />
         <TopRatedMov />
         <MostPopularMov />
+        <Comedy />
         <ScifiHorror />
         <ChildrenFamily />
       </ScrollView>
