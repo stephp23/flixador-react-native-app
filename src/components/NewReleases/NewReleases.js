@@ -11,8 +11,9 @@ import {
 } from "react-native";
 import styles from "./styleNewReleases";
 const imgUrl = "https://image.tmdb.org/t/p/original";
-const NewReleases = () => {
+const NewReleases = ({ navigation: { navigate } }) => {
   const [newRelease, setNewRelease] = useState([]);
+
   const fetchNewRelease = async () => {
     let URL = `https://api.themoviedb.org/3/trending/all/week?api_key=${config.APIKEY}&language=en-US`;
     let response = await axios.get(URL);
@@ -38,8 +39,7 @@ const NewReleases = () => {
           {newRelease.map((moviesNewReleses, index) => {
             return (
               <TouchableHighlight
-                onPress={() => console.log(moviesNewReleses.id)}
-                // onPress={() => navigation.navigate("movie")}
+                onPress={() => navigate("movie", moviesNewReleses)}
                 key={index}
                 style={{
                   borderRadius: 28,
