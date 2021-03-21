@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet, Text, View, ScrollView } from "react-native";
 import Banar from "../../components/Banar/Banar";
 import ChildrenFamily from "../../components/ChildrenFamily/ChildrenFamily";
+import Comedy from "../../components/Comedy/Comedy";
 import MostPopularMov from "../../components/MostPopularMov/MostPopularMov";
 import NewReleases from "../../components/NewReleases/NewReleases";
 import ScifiHorror from "../../components/ScifiHorror/ScifiHorror";
@@ -22,10 +23,15 @@ const Home = ({ navigation }) => {
       >
         <Banar />
         <NewReleases navigation={navigation} />
+
         <TopRatedMov navigation={navigation} />
         <MostPopularMov navigation={navigation} />
         <ScifiHorror navigation={navigation} />
         <ChildrenFamily navigation={navigation} />
+           <Comedy />
+      
+       
+
       </ScrollView>
     </View>
   );
