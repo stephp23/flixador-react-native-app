@@ -11,7 +11,7 @@ import {
 } from "react-native";
 import styles from "./styleComedy";
 const imgUrl = "https://image.tmdb.org/t/p/original";
-const Comedy = () => {
+const Comedy = ({ navigation: { navigate } }) => {
   const [comedy, setComedy] = useState([]);
   const fetchComedy = async () => {
     let URL = `https://api.themoviedb.org/3/discover/movie?api_key=${config.APIKEY}&with_genres=35`;
@@ -38,7 +38,7 @@ const Comedy = () => {
           {comedy.map((moviesComedy, index) => {
             return (
               <TouchableHighlight
-                onPress={() => console.log(moviesComedy.id)}
+                onPress={() => navigate("movie", moviesComedy)}
                 key={index}
                 style={{
                   borderRadius: 28,
