@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View, Button } from "react-native";
 
-const StyleFullMovie = ({ route: { params } }) => {
+const FullMovie = ({ route: { params } }) => {
   const { id } = params;
   ///{}
   return (
@@ -11,7 +11,7 @@ const StyleFullMovie = ({ route: { params } }) => {
   );
 };
 
-export default StyleFullMovie;
+export default FullMovie;
 
 const styles = StyleSheet.create({
   root: {

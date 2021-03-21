@@ -11,7 +11,7 @@ import {
 } from "react-native";
 import styles from "./styleTopRatedMov";
 const imgUrl = "https://image.tmdb.org/t/p/original";
-const TopRatedMov = () => {
+const TopRatedMov = ({ navigation: { navigate } }) => {
   const [topRatedMov, setTopRatedMov] = useState([]);
   const fetchTopRatedMov = async () => {
     let URL = `https://api.themoviedb.org/3/movie/top_rated?api_key=${config.APIKEY}&language=en-US&page=1`;
@@ -38,7 +38,7 @@ const TopRatedMov = () => {
           {topRatedMov.map((topRatedMov, index) => {
             return (
               <TouchableHighlight
-                onPress={() => console.log(topRatedMov.id)}
+                onPress={() => navigate("movie", topRatedMov)}
                 key={index}
                 style={{
                   borderRadius: 28,
