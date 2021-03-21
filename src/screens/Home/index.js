@@ -28,10 +28,7 @@ const Home = ({ navigation }) => {
         <MostPopularMov navigation={navigation} />
         <ScifiHorror navigation={navigation} />
         <ChildrenFamily navigation={navigation} />
-           <Comedy />
-      
-       
-
+        <Comedy navigation={navigation} />
       </ScrollView>
     </View>
   );
