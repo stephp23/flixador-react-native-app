@@ -11,7 +11,7 @@ import {
 } from "react-native";
 import styles from "./styleChildrenFamily";
 const imgUrl = "https://image.tmdb.org/t/p/original";
-const ChildrenFamily = () => {
+const ChildrenFamily = ({ navigation: { navigate } }) => {
   const [childrenFamily, setChildrenFamily] = useState([]);
   const fetchChildrenFamily = async () => {
     let URL = `https://api.themoviedb.org/3/discover/movie?api_key=${config.APIKEY}&with_genres=10749`;
@@ -38,7 +38,7 @@ const ChildrenFamily = () => {
           {childrenFamily.map((moviesChildrenFamily, index) => {
             return (
               <TouchableHighlight
-                onPress={() => console.log(moviesChildrenFamily.id)}
+                onPress={() => navigate("movie", moviesChildrenFamily)}
                 key={index}
                 style={{
                   borderRadius: 28,
@@ -51,7 +51,9 @@ const ChildrenFamily = () => {
                 <Image
                   style={{ transform: "scale: 4.1" }}
                   style={styles.row_poster}
-                  source={{ uri: `${imgUrl}${moviesChildrenFamily.poster_path}` }}
+                  source={{
+                    uri: `${imgUrl}${moviesChildrenFamily.poster_path}`,
+                  }}
                 />
               </TouchableHighlight>
             );

@@ -11,7 +11,7 @@ import {
 } from "react-native";
 import styles from "./styleScifiHorror";
 const imgUrl = "https://image.tmdb.org/t/p/original";
-const ScifiHorror = () => {
+const ScifiHorror = ({ navigation: { navigate } }) => {
   const [scifiHorror, setScifiHorror] = useState([]);
   const fetchScifiHorror = async () => {
     let URL = `https://api.themoviedb.org/3/discover/tv?api_key=${config.APIKEY}&with_networks=213`;
@@ -38,7 +38,7 @@ const ScifiHorror = () => {
           {scifiHorror.map((moviesScifiHorror, index) => {
             return (
               <TouchableHighlight
-                onPress={() => console.log(moviesScifiHorror.id)}
+                onPress={() => navigate("movie", moviesScifiHorror)}
                 key={index}
                 style={{
                   borderRadius: 28,
