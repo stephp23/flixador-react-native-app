@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { StyleSheet, Text, View, Button, Image } from "react-native";
+import { StyleSheet, Text, View, Button, ImageBackground } from "react-native";
 import config from "../../../config";
 import axios from "axios";
+import ButtonStyle from "../Banar/ButtonStyle/ButtonStyle";
 import { LinearGradient } from "expo-linear-gradient";
 
 import movieTrailer from "movie-trailer";
@@ -56,24 +57,42 @@ const FullMovie = ({ route: { params } }) => {
 
   return (
     <View>
-      <Image
+      <ImageBackground
         resizeMode="contian"
         source={image}
         style={{
           height: 450,
           width: 375,
         }}
-      />
-      <LinearGradient
-        locations={[0, 1.0]}
-        colors={["rgba(0,0,0,0.00)", "rgba(0,0,0,0.80)"]}
-        style={{
-          position: "absolute",
-          bottom: 0,
-          width: "100%",
-          height: 118,
-        }}
-      />
+      >
+        <LinearGradient
+          locations={[0, 1.0]}
+          colors={["rgba(0,0,0,0.00)", "rgba(0,0,0,0.80)"]}
+          style={{
+            position: "absolute",
+            bottom: 0,
+            width: "100%",
+            height: 118,
+          }}
+        />
+        <View style={styles.banarinfo}>
+          <Text style={styles.title}>
+            {fullMoviebanar?.title ||
+              fullMoviebanar?.name ||
+              fullMoviebanar?.orignal_name}
+          </Text>
+        </View>
+
+        <View tyle={styles.banarbuttons}>
+          <ButtonStyle
+            text="Play"
+            color="rgba(51, 51, 51, 0.5)"
+            onPress={() => handleClickMovie()}
+          />
+        </View>
+      </ImageBackground>
+
+      <Text style={styles.title}></Text>
     </View>
   );
 };
@@ -86,5 +105,14 @@ const styles = StyleSheet.create({
     backgroundColor: "#f5f5f5",
     alignItems: "center",
     justifyContent: "center",
+  },
+  title: {
+    paddingLeft: 40,
+    marginTop: 200,
+    marginRight: 20,
+    color: "white",
+    fontSize: 20,
+    fontWeight: "600",
+    paddingBottom: 9.8,
   },
 });
