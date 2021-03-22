@@ -1,16 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { StyleSheet, Text, View, Image, ScrollView } from "react-native";
+import { StyleSheet, Text, View, Image, ScrollView, TouchableHighlight } from "react-native";
 import config from "../../../config";
-import { useSelector }from "react-redux";
 import axios from "axios";
-
-
+import styles from "./stylesMovies";
 
 const imgUrl = "https://image.tmdb.org/t/p/original";
 
-const Movies = ({ setGetMovieId, light }) => {
-  const { movies } = useSelector((state) => state.movies);
-  const text = useSelector((state) => state.movies.text);
+const Movies = ({ navigation: { navigate } }) => {
   const [moviesPagesRow1, setMoviesPagesRow1] = useState([]);
   const [show, setShow] = useState(true);
 
@@ -24,14 +20,6 @@ const Movies = ({ setGetMovieId, light }) => {
     fetchMoviesPageRow1();
   }, []);
 
-  useEffect(() => {
-    const handleScrolling = window.addEventListener("scroll", () => {
-      window.scrollY > -20 ? setShow(true) : setShow(false);
-    });
-    return () => {
-      window.removeEventListener("scroll", handleScrolling);
-    };
-  }, []);
 
   return (
     <View style={styles.row1}>
@@ -46,14 +34,25 @@ const Movies = ({ setGetMovieId, light }) => {
           decelerationRate="slow"
           pagingEnabled
         >
-          {moviesPagesRow1.map((moviesMostPopular, index) => {
+          {moviesPagesRow1.map((moviesRow1, index) => {
             return (
-              <Image
+              <TouchableHighlight
+                onPress={() => navigate("movie", moviesRow1)}
                 key={index}
+                style={{
+                  borderRadius: 28,
+                  marginRight: 10,
+                  resizeMode: "contain",
+                  height: 230,
+                  width: 150,
+                }}
+              >
+                <Image
                 style={{ transform: "scale: 4.1" }}
                 style={styles.row_poster}
-                source={{ uri: `${imgUrl}${moviesMostPopular.poster_path}` }}
-              />
+                source={{ uri: `${imgUrl}${moviesRow1.poster_path}` }}
+                />
+              </TouchableHighlight>
             );
           })}
         </ScrollView>
@@ -63,12 +62,3 @@ const Movies = ({ setGetMovieId, light }) => {
 };
 
 export default Movies;
-
-const styles = StyleSheet.create({
-  root: {
-    flex: 1,
-    backgroundColor: "#f5f5f5",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
