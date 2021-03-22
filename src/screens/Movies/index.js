@@ -1,23 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { StyleSheet, Text, View, Image, ScrollView } from "react-native";
 import config from "../../../config";
+import { useSelector }from "react-redux";
 import axios from "axios";
-import Nav from "../components/Nav/Nav";
+
 
 
 const imgUrl = "https://image.tmdb.org/t/p/original";
 
-const Movies = () => {
-
+const Movies = ({ setGetMovieId, light }) => {
   const { movies } = useSelector((state) => state.movies);
   const text = useSelector((state) => state.movies.text);
-
   const [moviesPagesRow1, setMoviesPagesRow1] = useState([]);
-
   const [show, setShow] = useState(true);
 
   const fetchMoviesPageRow1 = async () => {
-    let URL = `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_APIKEY}&with_genres=28`;
+    let URL = `https://api.themoviedb.org/3/discover/movie?api_key=${config.APIKEY}&with_genres=28`;
     const response = await axios.get(URL);
     setMoviesPagesRow1(response.data.results);
   };
@@ -35,10 +33,31 @@ const Movies = () => {
     };
   }, []);
 
-
   return (
-    <View style={styles.root}>
-      <Text>this is movies</Text>
+    <View style={styles.row1}>
+      <Text style={styles.text}>Most Popular Movies</Text>
+
+      <View style={styles.row_posters}>
+        <ScrollView
+          horizontal={true}
+          contentContainerStyle={{}}
+          showsHorizontalScrollIndicator={false}
+          scrollEventThrottle={120}
+          decelerationRate="slow"
+          pagingEnabled
+        >
+          {moviesPagesRow1.map((moviesMostPopular, index) => {
+            return (
+              <Image
+                key={index}
+                style={{ transform: "scale: 4.1" }}
+                style={styles.row_poster}
+                source={{ uri: `${imgUrl}${moviesMostPopular.poster_path}` }}
+              />
+            );
+          })}
+        </ScrollView>
+      </View>
     </View>
   );
 };

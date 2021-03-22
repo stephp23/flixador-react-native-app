@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import config from "../../../config";
 import axios from "axios";
 
-import { Text, View, Image, ScrollView } from "react-native";
+import { Text, View, Image, ScrollView, TouchableHighlight, } from "react-native";
 import styles from "./styleActionAdventure";
 const imgUrl = "https://image.tmdb.org/t/p/original";
 
-const ActionAdventure = () => {
+const ActionAdventure = ({ navigation: { navigate } }) => {
   const [actionAdventureMovies, setActionAdventureMovies] = useState([]);
   const fetchActionAdventureMovies = async () => {
     let URL = `https://api.themoviedb.org/3/discover/movie?api_key=${config.APIKEY}&with_genres=28`;
@@ -32,12 +32,23 @@ const ActionAdventure = () => {
         >
           {actionAdventureMovies.map((moviesActionAdven, index) => {
             return (
-              <Image
+              <TouchableHighlight
+                onPress={() => navigate("movie", moviesActionAdven)}
                 key={index}
+                style={{
+                  borderRadius: 28,
+                  marginRight: 10,
+                  resizeMode: "contain",
+                  height: 230,
+                  width: 150,
+                }}
+              >
+                <Image
                 style={{ transform: "scale: 4.1" }}
                 style={styles.row_poster}
                 source={{ uri: `${imgUrl}${moviesActionAdven.poster_path}` }}
-              />
+                />
+              </TouchableHighlight>
             );
           })}
         </ScrollView>
