@@ -1,11 +1,11 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, Dimensions } from "react-native";
 import { NavigationContainer, StackActions } from "@react-navigation/native";
 
 import TabNavigator from "./Navigation/TabNavigator";
-import Search from "./components/Search/Search";
-
+import Search from "./components/Banar/Search/Search";
+const { width } = Dimensions.get("screen");
 export default function App() {
   return (
     <NavigationContainer>
@@ -15,9 +15,12 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  wrapper: {
     flex: 1,
-    backgroundColor: "white",
+    position: "absolute",
+    marginTop: 30,
+    width: width,
+
     alignItems: "center",
     justifyContent: "center",
   },

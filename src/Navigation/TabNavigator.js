@@ -10,6 +10,7 @@ import {
 } from "./Stack/StackScreen";
 
 const Tab = createBottomTabNavigator();
+
 const TabNavigator = () => {
   return (
     <Tab.Navigator tabBar={(props) => <TabBar {...props} />}>

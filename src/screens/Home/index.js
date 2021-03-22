@@ -9,7 +9,7 @@ import ScifiHorror from "../../components/ScifiHorror/ScifiHorror";
 import TopRatedMov from "../../components/TopRatedMov/TopRatedMov";
 import { createStackNavigator } from "@react-navigation/stack";
 import FullMovie from "../../components/FullMovie/FullMovie";
-import Search from "../../components/Search/Search";
+import Search from "../../components/Banar/Search/Search";
 
 const Home = ({ navigation }) => {
   return (

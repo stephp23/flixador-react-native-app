@@ -7,23 +7,23 @@ const styles = StyleSheet.create({
     alignContent: "center",
   },
   banarinfo: {
-    marginTop: -40,
+    marginTop: 10,
     marginLeft: 40,
-    paddingTop: 140,
-    height: 190,
+    paddingTop: 150,
+    height: 120,
   },
   title: {
-    marginTop: -50,
+    marginTop: -30,
     color: "white",
     fontSize: 25,
     fontWeight: "600",
-    paddingBottom: 4.8,
+    paddingBottom: 1.8,
   },
   banarDescription: {
     color: "white",
     width: "70%",
     marginLeft: 20,
-    marginTop: 20,
+    marginTop: 10,
   },
   video: {
     alignSelf: "center",
@@ -31,8 +31,8 @@ const styles = StyleSheet.create({
     height: 200,
   },
   search: {
-    left: 300,
-    marginTop: 40,
+    left: 20,
+    marginTop: 50,
   },
 });
 

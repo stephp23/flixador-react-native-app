@@ -6,7 +6,7 @@ import ButtonStyle from "./ButtonStyle/ButtonStyle";
 import { ImageBackground, Text, View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import styles from "./styleBanar";
-import Search from "../Search/Search";
+import Search from "./Search/Search";
 
 const Banar = () => {
   const video = useRef(null);
