@@ -2,15 +2,17 @@ import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { StyleSheet, Text, View, Dimensions } from "react-native";
 import { NavigationContainer, StackActions } from "@react-navigation/native";
-
+import store from "./store/store";
 import TabNavigator from "./Navigation/TabNavigator";
-import Search from "./components/Banar/Search/Search";
+import { Provider } from "react-redux";
 const { width } = Dimensions.get("screen");
 export default function App() {
   return (
-    <NavigationContainer>
-      <TabNavigator />
-    </NavigationContainer>
+    <Provider store={store}>
+      <NavigationContainer>
+        <TabNavigator />
+      </NavigationContainer>
+    </Provider>
   );
 }
 
