@@ -4,6 +4,7 @@ import { StyleSheet, Text, View } from "react-native";
 import { NavigationContainer, StackActions } from "@react-navigation/native";
 
 import TabNavigator from "./Navigation/TabNavigator";
+import Search from "./components/Search/Search";
 
 export default function App() {
   return (

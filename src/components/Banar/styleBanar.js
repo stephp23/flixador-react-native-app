@@ -7,11 +7,13 @@ const styles = StyleSheet.create({
     alignContent: "center",
   },
   banarinfo: {
+    marginTop: -40,
     marginLeft: 40,
     paddingTop: 140,
     height: 190,
   },
   title: {
+    marginTop: -50,
     color: "white",
     fontSize: 25,
     fontWeight: "600",
@@ -27,6 +29,10 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     width: 320,
     height: 200,
+  },
+  search: {
+    left: 300,
+    marginTop: 40,
   },
 });
 
