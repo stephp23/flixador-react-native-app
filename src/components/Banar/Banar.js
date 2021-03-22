@@ -57,7 +57,7 @@ const Banar = () => {
     // <View style={styles.banar}>
     <View>
       <ImageBackground
-        resizeMode="contian"
+        resizeMode="cover"
         source={image}
         style={{
           height: 450,
