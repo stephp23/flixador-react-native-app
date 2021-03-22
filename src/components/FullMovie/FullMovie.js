@@ -1,5 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { StyleSheet, Text, View, Button, ImageBackground } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Button,
+  ImageBackground,
+  ScrollView,
+  Image,
+  TouchableHighlight,
+} from "react-native";
 import config from "../../../config";
 import axios from "axios";
 import ButtonStyle from "../Banar/ButtonStyle/ButtonStyle";
@@ -7,7 +16,8 @@ import { LinearGradient } from "expo-linear-gradient";
 
 import movieTrailer from "movie-trailer";
 import { useSelector } from "react-redux";
-const FullMovie = ({ route: { params } }) => {
+const imgUrl = "https://image.tmdb.org/t/p/original";
+const FullMovie = ({ route: { params }, navigation: { navigate } }) => {
   const { id } = params;
   const [fullMoviebanar, setFullMoviebanar] = useState([]);
   const [fulltrailerUrl, setfullTrailerUrl] = useState("");
@@ -26,7 +36,7 @@ const FullMovie = ({ route: { params } }) => {
 
   useEffect(() => {
     fetchSimilarMovie();
-  }, [fullMoviebanar]);
+  }, []);
   useEffect(() => {
     fetchFullMovie();
   }, [fullMoviebanar]);
@@ -56,43 +66,103 @@ const FullMovie = ({ route: { params } }) => {
   };
 
   return (
-    <View>
-      <ImageBackground
-        resizeMode="contian"
-        source={image}
-        style={{
-          height: 450,
-          width: 375,
+    <View style={styles.root}>
+      <ScrollView
+        contentContainerStyle={{
+          height: "auto",
         }}
+        showsVerticalScrollIndicator={false}
+        showsHorizontalScrollIndicator={false}
+        scrollEventThrottle={120}
+        decelerationRate="fast"
+        pagingEnabled
       >
-        <LinearGradient
-          locations={[0, 1.0]}
-          colors={["rgba(0,0,0,0.00)", "rgba(0,0,0,0.80)"]}
+        <ImageBackground
+          resizeMode="contian"
+          source={image}
           style={{
-            position: "absolute",
-            bottom: 0,
-            width: "100%",
-            height: 118,
+            height: 450,
+            width: 375,
           }}
-        />
-        <View style={styles.banarinfo}>
-          <Text style={styles.title}>
+        >
+          <LinearGradient
+            locations={[0, 1.0]}
+            colors={["rgba(0,0,0,0.00)", "rgba(0,0,0,0.80)"]}
+            style={{
+              position: "absolute",
+              bottom: 0,
+              width: "100%",
+              height: 118,
+            }}
+          />
+          <View style={styles.banarinfo}>
+            <Text style={styles.title}>
+              {fullMoviebanar?.title ||
+                fullMoviebanar?.name ||
+                fullMoviebanar?.orignal_name}
+            </Text>
+          </View>
+
+          <View tyle={styles.banarbuttons}>
+            <ButtonStyle
+              text="Play"
+              color="rgba(51, 51, 51, 0.5)"
+              onPress={() => handleClickMovie()}
+            />
+          </View>
+        </ImageBackground>
+        <View>
+          <Text style={styles.subjact}>
             {fullMoviebanar?.title ||
               fullMoviebanar?.name ||
               fullMoviebanar?.orignal_name}
           </Text>
+          <Text style={styles.description}>
+            Run Time : {fullMoviebanar.runtime} min
+          </Text>
+          <Text style={styles.description}> {fullMoviebanar.release_date}</Text>
+          <Text style={styles.description}>
+            {truncate(fullMoviebanar?.overview, 300)}
+          </Text>
         </View>
-
-        <View tyle={styles.banarbuttons}>
-          <ButtonStyle
-            text="Play"
-            color="rgba(51, 51, 51, 0.5)"
-            onPress={() => handleClickMovie()}
-          />
+        <View style={styles.similarView}>
+          <Text style={styles.similarText}> Similar Movies</Text>
         </View>
-      </ImageBackground>
-
-      <Text style={styles.title}></Text>
+        <View style={styles.row1}>
+          <View style={styles.row_posters}>
+            <ScrollView
+              horizontal={true}
+              contentContainerStyle={{}}
+              showsHorizontalScrollIndicator={false}
+              scrollEventThrottle={120}
+              decelerationRate="slow"
+              pagingEnabled
+            >
+              {similarMovie.map((similarMovies, index) => {
+                return (
+                  <TouchableHighlight
+                    onPress={() => navigate("movie", similarMovies)}
+                    key={index}
+                    style={{
+                      borderRadius: 28,
+                      marginRight: 10,
+                      resizeMode: "contain",
+                      height: 230,
+                      width: 150,
+                    }}
+                  >
+                    <Image
+                      style={{ transform: "scale: 4.1" }}
+                      style={styles.row_poster}
+                      source={{ uri: `${imgUrl}${similarMovies.poster_path}` }}
+                    />
+                  </TouchableHighlight>
+                );
+              })}
+            </ScrollView>
+          </View>
+        </View>
+      </ScrollView>
     </View>
   );
 };
@@ -114,5 +184,40 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "600",
     paddingBottom: 9.8,
+  },
+  subjact: {
+    margin: 20,
+    fontSize: 20,
+  },
+  description: {
+    margin: 10,
+    fontSize: 15,
+  },
+  similarView: {
+    margin: 18,
+  },
+  similarText: {
+    fontSize: 18,
+  },
+  row1: {
+    marginLeft: 0,
+    fontWeight: "bold",
+    // fontSize: 2,
+    color: "white",
+    height: 400,
+  },
+  row_posters: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    overflow: "hidden",
+    margin: 5,
+  },
+  row_poster: {
+    resizeMode: "contain",
+    height: 230,
+    width: 150,
+    marginRight: 10,
+    borderRadius: 28,
   },
 });
