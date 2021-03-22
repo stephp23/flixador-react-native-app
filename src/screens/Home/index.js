@@ -9,6 +9,7 @@ import ScifiHorror from "../../components/ScifiHorror/ScifiHorror";
 import TopRatedMov from "../../components/TopRatedMov/TopRatedMov";
 import { createStackNavigator } from "@react-navigation/stack";
 import FullMovie from "../../components/FullMovie/FullMovie";
+import Search from "../../components/Banar/Search/Search";
 
 const Home = ({ navigation }) => {
   return (
@@ -22,6 +23,9 @@ const Home = ({ navigation }) => {
         pagingEnabled
       >
         <Banar />
+        {/* <View style={styles.search}>
+          <Search />
+        </View> */}
         <NewReleases navigation={navigation} />
 
         <TopRatedMov navigation={navigation} />
@@ -43,4 +47,5 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  search: {},
 });
