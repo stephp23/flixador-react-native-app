@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View, ScrollView } from "react-native";
 import Banar from "../../components/Banar/Banar";
+import ActionAdventure from "../../components/ActionAdventure/ActionAdventure";
 import ChildrenFamily from "../../components/ChildrenFamily/ChildrenFamily";
 import Comedy from "../../components/Comedy/Comedy";
 import MostPopularMov from "../../components/MostPopularMov/MostPopularMov";
@@ -27,7 +28,7 @@ const Home = ({ navigation }) => {
           <Search />
         </View> */}
         <NewReleases navigation={navigation} />
-
+        <ActionAdventure navigation={navigation} />
         <TopRatedMov navigation={navigation} />
         <MostPopularMov navigation={navigation} />
         <ScifiHorror navigation={navigation} />
