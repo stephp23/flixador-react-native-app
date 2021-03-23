@@ -70,6 +70,7 @@ const Movies = ({ navigation: { navigate } }) => {
       <View style={styles.searchIcon}>
         <Search />
       </View>
+      <ScrollView>
       {movies ? (
         <View style={styles.row1}>
           <Text style={styles.text}>{text ? `Results Of : ${text}` : ""}</Text>
@@ -294,11 +295,8 @@ const Movies = ({ navigation: { navigate } }) => {
             })}
           </ScrollView>
         </View>
-      </View>
-
-
-
-
+        </View>
+      </ScrollView>
     </View>
   );
 };
