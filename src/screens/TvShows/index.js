@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-const TvShows = () => {
+const TvShows = ({ navigation, navigation: { navigate } }) => {
   return (
     <View style={styles.root}>
       <Text> this is is tv shows </Text>
