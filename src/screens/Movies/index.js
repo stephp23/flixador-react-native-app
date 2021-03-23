@@ -22,6 +22,7 @@ const Movies = ({ navigation: { navigate } }) => {
   const [moviesPagesRow1, setMoviesPagesRow1] = useState([]);
   const [moviesPagesRow2, setMoviesPagesRow2] = useState([]);
   const [moviesPagesRow3, setMoviesPagesRow3] = useState([]);
+  const [moviesPagesRow4, setMoviesPagesRow4] = useState([]);
   const [show, setShow] = useState(true);
 
   const fetchMoviesPageRow1 = async () => {
@@ -42,10 +43,17 @@ const Movies = ({ navigation: { navigate } }) => {
     setMoviesPagesRow3(response.data.results);
   };
 
+  const fetchMoviesPageRow4 = async () => {
+    let URL = `https://api.themoviedb.org/3/movie/upcoming?api_key=${config.APIKEY}&language=en-US&page=3`;
+    const response = await axios.get(URL);
+    setMoviesPagesRow4(response.data.results);
+  };
+
   useEffect(() => {
     fetchMoviesPageRow1();
     fetchMoviesPageRow2();
     fetchMoviesPageRow3();
+    fetchMoviesPageRow4();
   }, []);
 
   return (
@@ -168,7 +176,7 @@ const Movies = ({ navigation: { navigate } }) => {
         </View>
       </View>
 
-      <View style={styles.row1}></View>
+      <View style={styles.row1}>
         <Text style={styles.text}>Upcomingpage2 Movies</Text>
 
         <View style={styles.row_posters}>
@@ -204,10 +212,49 @@ const Movies = ({ navigation: { navigate } }) => {
           </ScrollView>
         </View>
       </View>
-    
-    
+
+      <View style={styles.row1}>
+        <Text style={styles.text}>Upcomingpage3 Movies</Text>
+        
+        <View style={styles.row_posters}>
+          <ScrollView
+            horizontal={true}
+            contentContainerStyle={{}}
+            showsHorizontalScrollIndicator={false}
+            scrollEventThrottle={120}
+            decelerationRate="slow"
+            pagingEnabled 
+          >
+            {moviesPagesRow4.map((moviesRow4, index) => {
+              return (
+                <TouchableHighlight
+                  onPress={() => navigate("movie", moviesRow4)}
+                  key={index}
+                  style={{
+                    borderRadius: 28,
+                    marginRight: 10,
+                    resizeMode: "contain",
+                    height: 230,
+                    width: 150,
+                  }}
+                >
+                  <Image
+                  style={{ transform: "scale: 4.1" }}
+                  style={styles.row_poster}
+                  source={{ uri: `${imgUrl}${moviesRow4.poster_path}` }}
+                  />
+                </TouchableHighlight>
+              );
+            })}
+          </ScrollView>
+        </View>
+      </View>
 
 
+
+
+      
+    </View>
   );
 };
 
