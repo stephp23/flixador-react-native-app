@@ -3,6 +3,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Home from "../../screens/Home";
 import Movies from "../../screens/Movies";
 import Team from "../../screens/Team";
+import TvShows from "../../screens/TvShows";
 import FullMovie from "../../components/FullMovie/FullMovie";
 import { color } from "react-native-reanimated";
 
