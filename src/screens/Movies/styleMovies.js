@@ -1,19 +1,19 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-  row1: {
+  row2: {
     marginLeft: 0,
     fontWeight: "bold",
     color: "white",
   },
-  row_posters: {
+  row_posters2: {
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
     overflow: "hidden",
     margin: 5,
   },
-  row_poster: {
+  row_poster2: {
     resizeMode: "contain",
     height: 230,
     width: 150,

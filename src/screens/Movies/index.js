@@ -8,6 +8,7 @@ const imgUrl = "https://image.tmdb.org/t/p/original";
 
 const Movies = ({ navigation: { navigate } }) => {
   const [moviesPagesRow1, setMoviesPagesRow1] = useState([]);
+  const [moviesPagesRow2, setMoviesPagesRow2] = useState([]);
   const [show, setShow] = useState(true);
 
   const fetchMoviesPageRow1 = async () => {
@@ -16,16 +17,23 @@ const Movies = ({ navigation: { navigate } }) => {
     setMoviesPagesRow1(response.data.results);
   };
 
+  const fetchMoviesPageRow2 = async () => {
+    let URL = `https://api.themoviedb.org/3/movie/upcoming?api_key=${config.APIKEY}&language=en-US&page=1`;
+    const response = await axios.get(URL);
+    setMoviesPagesRow2(response.data.results);
+  };
+
   useEffect(() => {
     fetchMoviesPageRow1();
+    fetchMoviesPageRow2();
   }, []);
 
 
   return (
-    <View style={styles.row1}>
-      <Text style={styles.text}>New Releases</Text>
+    <View style={styles.row2}>
+      <Text style={styles.text}>Discover Movies</Text>
 
-      <View style={styles.row_posters}>
+      <View style={styles.row_posters2}>
         <ScrollView
           horizontal={true}
           contentContainerStyle={{}}
@@ -49,7 +57,7 @@ const Movies = ({ navigation: { navigate } }) => {
               >
                 <Image
                 style={{ transform: "scale: 4.1" }}
-                style={styles.row_poster}
+                style={styles.row_poster2}
                 source={{ uri: `${imgUrl}${moviesRow1.poster_path}` }}
                 />
               </TouchableHighlight>
