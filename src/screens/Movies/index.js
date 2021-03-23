@@ -20,7 +20,6 @@ const Movies = ({ navigation: { navigate } }) => {
   const text = useSelector((state) => state.movies.text);
 
   const [moviesPagesRow1, setMoviesPagesRow1] = useState([]);
-  const [show, setShow] = useState(true);
 
   const fetchMoviesPageRow1 = async () => {
     let URL = `https://api.themoviedb.org/3/discover/movie?api_key=${config.APIKEY}&with_genres=28`;
