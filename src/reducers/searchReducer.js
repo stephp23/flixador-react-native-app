@@ -1,4 +1,4 @@
-import { SEARCH_MOVIE, FETCH_MOVIES } from "../actions/searchActions";
+import { SEARCH_MOVIE, FETCH_MOVIES } from "../actions/type";
 
 const initialState = {
   text: "",
