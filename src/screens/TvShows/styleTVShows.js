@@ -1,6 +1,10 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
+  searchIcon: {
+    left: 20,
+    marginTop: 50,
+  },
   row1: {
     marginLeft: 0,
     fontWeight: "bold",

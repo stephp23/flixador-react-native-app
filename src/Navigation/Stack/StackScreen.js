@@ -3,7 +3,9 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Home from "../../screens/Home";
 import Movies from "../../screens/Movies";
 import Team from "../../screens/Team";
+import TvShows from "../../screens/TvShows";
 import FullMovie from "../../components/FullMovie/FullMovie";
+import FullTvShow from "../../components/FullTvShow/FullTvShow";
 import { color } from "react-native-reanimated";
 
 const HomeStack = createStackNavigator();
@@ -47,8 +49,14 @@ export const MoviesStackScreen = () => {
 };
 export const TvShowsStackScreen = () => {
   return (
-    <TvShowsStack.Navigator screenOptions={{ headerShown: false }}>
+    <TvShowsStack.Navigator
+      screenOptions={{
+        headerTransparent: true,
+        title: "",
+      }}
+    >
       <TvShowsStack.Screen name="TvShows" component={TvShows} />
+      <TvShowsStack.Screen name="TvShow" component={FullTvShow} />
     </TvShowsStack.Navigator>
   );
 };
