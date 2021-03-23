@@ -7,7 +7,7 @@ import {
   TouchableHighlight,
   Image,
 } from "react-native";
-import styles from "./styleTVShows";
+import styles from "./styleTvShows";
 import Search from "../../components/Banar/Search/Search";
 import { useSelector } from "react-redux";
 
