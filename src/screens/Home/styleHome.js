@@ -35,6 +35,13 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     marginTop: 20,
   },
+  switchButton: {
+    marginTop: 10,
+    marginLeft: 10,
+  },
+  btweenBtn: {
+    marginTop: -15,
+  },
 });
 
 export default styles;

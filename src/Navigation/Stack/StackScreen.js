@@ -14,9 +14,6 @@ const TeamStack = createStackNavigator();
 const TvShowsStack = createStackNavigator();
 
 export const HomeStackScreen = () => {
-  const [getMovieId, setGetMovieId] = useState(0);
-  const [getTvShowId, setGetTvShowId] = useState(0);
-
   return (
     <HomeStack.Navigator
       screenOptions={{
@@ -24,19 +21,9 @@ export const HomeStackScreen = () => {
         title: "",
       }}
     >
-      <HomeStack.Screen
-        name="Home"
-        getMovieId={getMovieId}
-        setGetMovieId={setGetMovieId}
-        component={Home}
-      />
+      <HomeStack.Screen name="Home" component={Home} />
 
-      <HomeStack.Screen
-        name="movie"
-        getMovieId={getMovieId}
-        setGetMovieId={setGetMovieId}
-        component={FullMovie}
-      />
+      <HomeStack.Screen name="movie" component={FullMovie} />
     </HomeStack.Navigator>
   );
 };
