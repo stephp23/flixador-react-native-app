@@ -7,12 +7,12 @@ import {
   TouchableHighlight,
   Image,
 } from "react-native";
-import styles from "./styleTVShows";
+import styles from "./styleTvShows";
 import Search from "../../components/Banar/Search/Search";
 import { useSelector } from "react-redux";
 
 const imgUrl = "https://image.tmdb.org/t/p/original";
-const TvShows = ({ navigation, navigation: { navigate } }) => {
+const TvShows = ({ navigation, navigation: { navigate }, dark, setDark }) => {
   const movies = useSelector((state) => state.movies.movies);
   const text = useSelector((state) => state.movies.text);
   return (
