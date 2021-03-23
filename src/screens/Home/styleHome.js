@@ -1,6 +1,12 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
+  root: {
+    flex: 1,
+    backgroundColor: "#f5f5f5",
+    alignItems: "center",
+    justifyContent: "center",
+  },
   row1: {
     marginLeft: 0,
     fontWeight: "bold",
@@ -25,7 +31,7 @@ const styles = StyleSheet.create({
   text: {
     color: "#111",
     marginLeft: 20,
-    fontSize: 25,
+    fontSize: 22,
     marginBottom: 20,
     marginTop: 20,
   },

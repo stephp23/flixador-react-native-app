@@ -4,7 +4,6 @@ const styles = StyleSheet.create({
   row1: {
     marginLeft: 0,
     fontWeight: "bold",
-    // fontSize: 2,
     color: "white",
   },
   row_posters: {

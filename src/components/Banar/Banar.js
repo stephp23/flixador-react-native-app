@@ -6,6 +6,7 @@ import ButtonStyle from "./ButtonStyle/ButtonStyle";
 import { ImageBackground, Text, View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import styles from "./styleBanar";
+import Search from "./Search/Search";
 
 const Banar = () => {
   const video = useRef(null);
@@ -57,7 +58,7 @@ const Banar = () => {
     // <View style={styles.banar}>
     <View>
       <ImageBackground
-        resizeMode="contian"
+        resizeMode="cover"
         source={image}
         style={{
           height: 450,
@@ -74,6 +75,9 @@ const Banar = () => {
             height: 118,
           }}
         />
+        <View style={styles.search}>
+          <Search />
+        </View>
         <View style={styles.banarinfo}>
           <Text style={styles.title}>
             {banar?.title || banar?.name || banar?.orignal_name}
