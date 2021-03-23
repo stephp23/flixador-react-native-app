@@ -60,6 +60,8 @@ const TvShows = ({ navigation, navigation: { navigate } }) => {
       ) : (
         ""
       )}
+
+      {/**  your code will go here  */}
     </View>
   );
 };
