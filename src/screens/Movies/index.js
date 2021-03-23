@@ -31,7 +31,7 @@ const Movies = ({ navigation: { navigate } }) => {
 
   return (
     <View style={styles.row2}>
-      <Text style={styles.text}>Discover Movies</Text>
+      <Text style={styles.text}>ActionAdventure Movies</Text>
 
       <View style={styles.row_posters2}>
         <ScrollView
@@ -59,6 +59,40 @@ const Movies = ({ navigation: { navigate } }) => {
                 style={{ transform: "scale: 4.1" }}
                 style={styles.row_poster2}
                 source={{ uri: `${imgUrl}${moviesRow1.poster_path}` }}
+                />
+              </TouchableHighlight>
+            );
+          })}
+        </ScrollView>
+      </View>
+      <Text style={styles.text}>Upcomingpage1 Movies</Text>
+
+      <View style={styles.row_posters2}>
+      <ScrollView
+          horizontal={true}
+          contentContainerStyle={{}}
+          showsHorizontalScrollIndicator={false}
+          scrollEventThrottle={120}
+          decelerationRate="slow"
+          pagingEnabled
+        >
+          {moviesPagesRow2.map((moviesRow2, index) => {
+            return (
+              <TouchableHighlight
+                onPress={() => navigate("movie", moviesRow2)}
+                key={index}
+                style={{
+                  borderRadius: 28,
+                  marginRight: 10,
+                  resizeMode: "contain",
+                  height: 230,
+                  width: 150,
+                }}
+              >
+                <Image
+                style={{ transform: "scale: 4.1" }}
+                style={styles.row_poster2}
+                source={{ uri: `${imgUrl}${moviesRow2.poster_path}` }}
                 />
               </TouchableHighlight>
             );
