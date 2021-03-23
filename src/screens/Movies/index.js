@@ -23,7 +23,7 @@ const Movies = ({ navigation: { navigate } }) => {
 
   return (
     <View style={styles.row1}>
-      <Text style={styles.text}>Most Popular Movies</Text>
+      <Text style={styles.text}>New Releases</Text>
 
       <View style={styles.row_posters}>
         <ScrollView
