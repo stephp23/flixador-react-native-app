@@ -65,16 +65,6 @@ const Banar = () => {
           width: 375,
         }}
       >
-        <LinearGradient
-          locations={[0, 1.0]}
-          colors={["rgba(0,0,0,0.00)", "rgba(0,0,0,0.80)"]}
-          style={{
-            position: "absolute",
-            bottom: 0,
-            width: "100%",
-            height: 118,
-          }}
-        />
         <View style={styles.search}>
           <Search />
         </View>
@@ -95,6 +85,23 @@ const Banar = () => {
           </Text>
         </View>
       </ImageBackground>
+      <LinearGradient
+        // locations={[0, 0.2, 0.6, 0.93]}
+        // colors={[
+        //   "rgba(0,0,0,0.5)",
+        //   "rgba(0,0,0,0)",
+        //   "rgba(0,0,0,0)",
+        //   "rgba(0,0,0,1)",
+        // ]}
+        locations={[0, 1.0]}
+        colors={["rgba(0,0,0,0)", "rgba(0,0,0,0.80)"]}
+        style={{
+          position: "absolute",
+          bottom: -4,
+          width: "100%",
+          height: 118,
+        }}
+      />
     </View>
   );
 };

@@ -29,6 +29,13 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     marginTop: 20,
   },
+  textDark: {
+    color: "white",
+    marginLeft: 20,
+    fontSize: 25,
+    marginBottom: 20,
+    marginTop: 20,
+  },
 });
 
 export default styles;

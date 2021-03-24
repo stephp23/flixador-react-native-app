@@ -26,9 +26,9 @@ const Home = ({ navigation, navigation: { navigate } }) => {
   const text = useSelector((state) => state.movies.text);
   const dark = useTheme();
   const updateDark = useThemeUpdate();
-  console.log(dark);
+
   return (
-    <View style={styles.root}>
+    <View style={dark ? styles.rootDark : styles.root}>
       <ScrollView
         contentContainerStyle={{}}
         showsVerticalScrollIndicator={false}

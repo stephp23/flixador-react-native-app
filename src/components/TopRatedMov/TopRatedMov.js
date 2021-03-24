@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import config from "../../../config";
 import axios from "axios";
+import { useTheme } from "../../DarkMood";
 
 import {
   Text,
@@ -12,6 +13,7 @@ import {
 import styles from "./styleTopRatedMov";
 const imgUrl = "https://image.tmdb.org/t/p/original";
 const TopRatedMov = ({ navigation: { navigate } }) => {
+  const dark = useTheme();
   const [topRatedMov, setTopRatedMov] = useState([]);
   const fetchTopRatedMov = async () => {
     let URL = `https://api.themoviedb.org/3/movie/top_rated?api_key=${config.APIKEY}&language=en-US&page=1`;
@@ -24,7 +26,7 @@ const TopRatedMov = ({ navigation: { navigate } }) => {
   }, []);
   return (
     <View style={styles.row1}>
-      <Text style={styles.text}>Top Rated Movies</Text>
+      <Text style={dark ? styles.textDark : styles.text}>Top Rated Movies</Text>
 
       <View style={styles.row_posters}>
         <ScrollView
