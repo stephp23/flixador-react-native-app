@@ -20,6 +20,7 @@ const TvShows = ({ navigation, navigation: { navigate }, dark, setDark }) => {
   const text = useSelector((state) => state.movies.text);
 
   const [tvShowsPagesRow1, setTvShowsPagesRow1] = useState([]);
+  const [tvShowsPagesRow2, setTvShowsPagesRow2] = useState([]);
 
   const fetchTVShowsPagesRow1 = async () => {
     let URL = `https://api.themoviedb.org/3/discover/tv?api_key=${config.APIKEY}&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&include_null_first_air_dates=false`;
@@ -27,8 +28,16 @@ const TvShows = ({ navigation, navigation: { navigate }, dark, setDark }) => {
     setTvShowsPagesRow1(response.data.results);
   };
 
+  const fetchTVShowsPagesRow2 = async () => {
+    let URL = `https://api.themoviedb.org/3/discover/tv?api_key=${config.APIKEY}&language=en-US&sort_by=popularity.desc&page=2&timezone=America%2FNew_York&include_null_first_air_dates=false`;
+    const response = await axios.get(URL);
+    setTvShowsPagesRow2(response.data.results);
+  };
+
   useEffect(() => {
     fetchTVShowsPagesRow1();
+    fetchTVShowsPagesRow2();
+
   }, []);
 
   return (
@@ -106,6 +115,43 @@ const TvShows = ({ navigation, navigation: { navigate }, dark, setDark }) => {
                     style={{ transform: "scale: 4.1" }}
                     style={styles.row_poster}
                     source={{ uri: `${imgUrl}${tvShowsRow1.poster_path}` }}
+                  />
+                </TouchableHighlight>
+              );
+            })}
+          </ScrollView>
+        </View>
+      </View>
+
+      <View style={styles.row1}>
+        <Text style={styles.text}>TV Shows Row 2</Text>
+
+        <View style={styles.row_posters}>
+          <ScrollView
+            horizontal={true}
+            contentContainerStyle={{}}
+            showsHorizontalScrollIndicator={false}
+            scrollEventThrottle={120}
+            decelerationRate="slow"
+            pagingEnabled
+          >
+            {tvShowsPagesRow2.map((tvShowsRow2, index) => {
+              return (
+                <TouchableHighlight
+                  onPress={() => navigate("tvShows", tvShowsRow2)}
+                  key={index}
+                  style={{
+                    borderRadius: 28,
+                    marginRight: 10,
+                    resizeMode: "contain",
+                    height: 230,
+                    width: 150,
+                  }}
+                >
+                  <Image
+                    style={{ transform: "scale: 4.1" }}
+                    style={styles.row_poster}
+                    source={{ uri: `${imgUrl}${tvShowsRow2.poster_path}` }}
                   />
                 </TouchableHighlight>
               );
