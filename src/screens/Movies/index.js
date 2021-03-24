@@ -27,7 +27,7 @@ const Movies = ({ navigation: { navigate } }) => {
   const [show, setShow] = useState(true);
 
   const fetchMoviesPageRow1 = async () => {
-    let URL = `https://api.themoviedb.org/3/discover/movie?api_key=${config.APIKEY}&with_genres=28`;
+    let URL = `https://api.themoviedb.org/3/discover/movie?api_key=${config.APIKEY}&with_genres=5`;
     const response = await axios.get(URL);
     setMoviesPagesRow1(response.data.results);
   };
@@ -67,10 +67,18 @@ const Movies = ({ navigation: { navigate } }) => {
 
   return (
     <View>
+      <ScrollView
+      contentContainerStyle={{}}
+      showsVerticalScrollIndicator={false}
+      showsHorizontalScrollIndicator={false}
+      scrollEventThrottle={120}
+      decelerationRate="fast"
+        pagingEnabled
+      >
       <View style={styles.searchIcon}>
         <Search />
       </View>
-      <ScrollView>
+      
       {movies ? (
         <View style={styles.row1}>
           <Text style={styles.text}>{text ? `Results Of : ${text}` : ""}</Text>
