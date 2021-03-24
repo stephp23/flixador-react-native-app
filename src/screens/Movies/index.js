@@ -27,31 +27,31 @@ const Movies = ({ navigation: { navigate } }) => {
   const [show, setShow] = useState(true);
 
   const fetchMoviesPageRow1 = async () => {
-    let URL = `https://api.themoviedb.org/3/discover/movie?api_key=${config.APIKEY}&with_genres=5`;
+    let URL = `https://api.themoviedb.org/3/movie/upcoming?api_key=${config.APIKEY}&language=en-US&page=1`;
     const response = await axios.get(URL);
     setMoviesPagesRow1(response.data.results);
   };
 
   const fetchMoviesPageRow2 = async () => {
-    let URL = `https://api.themoviedb.org/3/movie/upcoming?api_key=${config.APIKEY}&language=en-US&page=1`;
+    let URL = `https://api.themoviedb.org/3/movie/upcoming?api_key=${config.APIKEY}&language=en-US&page=2`;
     const response = await axios.get(URL);
     setMoviesPagesRow2(response.data.results);
   };
 
   const fetchMoviesPageRow3 = async () => {
-    let URL = `https://api.themoviedb.org/3/movie/upcoming?api_key=${config.APIKEY}&language=en-US&page=2`;
+    let URL = `https://api.themoviedb.org/3/movie/upcoming?api_key=${config.APIKEY}&language=en-US&page=3`;
     const response = await axios.get(URL);
     setMoviesPagesRow3(response.data.results);
   };
 
   const fetchMoviesPageRow4 = async () => {
-    let URL = `https://api.themoviedb.org/3/movie/upcoming?api_key=${config.APIKEY}&language=en-US&page=3`;
+    let URL = `https://api.themoviedb.org/3/movie/upcoming?api_key=${config.APIKEY}&language=en-US&page=4`;
     const response = await axios.get(URL);
     setMoviesPagesRow4(response.data.results);
   };
 
   const fetchMoviesPageRow5 = async () => {
-    let URL = `https://api.themoviedb.org/3/movie/upcoming?api_key=${config.APIKEY}&language=en-US&page=4`;
+    let URL = `https://api.themoviedb.org/3/movie/upcoming?api_key=${config.APIKEY}&language=en-US&page=5`;
     const response = await axios.get(URL);
     setMoviesPagesRow5(response.data.results);
   };
