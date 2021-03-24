@@ -18,6 +18,9 @@ const styles = StyleSheet.create({
     margin: 5,
   },
   row_poster: {
+    display: "flex",
+    flexDirection: "column",
+    margin: 5,
     resizeMode: "contain",
     height: 230,
     width: 150,
@@ -28,7 +31,7 @@ const styles = StyleSheet.create({
   text: {
     color: "#111",
     marginLeft: 20,
-    fontSize: 25,
+    fontSize: 15,
     marginBottom: 20,
     marginTop: 20,
   },
