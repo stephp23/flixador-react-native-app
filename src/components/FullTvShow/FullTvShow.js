@@ -83,7 +83,7 @@ const FullTvShow = ({ route: { params }, navigation: { navigate } }) => {
         pagingEnabled
       >
         <ImageBackground
-          resizeMode="contian"
+          resizeMode="cover"
           source={image}
           style={{
             height: 450,
