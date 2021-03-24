@@ -7,14 +7,14 @@ const styles = StyleSheet.create({
     alignContent: "center",
   },
   banarinfo: {
-    marginTop: -50,
+    marginTop: -40,
     marginLeft: 40,
     paddingTop: 150,
     height: 120,
     fontSize: 15,
   },
   title: {
-    marginTop: -40,
+    marginTop: -30,
     color: "white",
     fontSize: 25,
     fontWeight: "600",
