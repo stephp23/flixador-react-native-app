@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   StyleSheet,
   Text,
@@ -7,14 +7,30 @@ import {
   TouchableHighlight,
   Image,
 } from "react-native";
+import config from "../../../config";
+import axios from "axios";
 import styles from "./styleTvShows";
 import Search from "../../components/Banar/Search/Search";
 import { useSelector } from "react-redux";
 
 const imgUrl = "https://image.tmdb.org/t/p/original";
+
 const TvShows = ({ navigation, navigation: { navigate }, dark, setDark }) => {
   const movies = useSelector((state) => state.movies.movies);
   const text = useSelector((state) => state.movies.text);
+
+  const [tvShowsPagesRow1, setTvShowsPagesRow1] = useState([]);
+
+  const fetchTVShowsPagesRow1 = async () => {
+    let URL = `https://api.themoviedb.org/3/discover/tv?api_key=${config.APIKEY}&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&include_null_first_air_dates=false`;
+    const response = await axios.get(URL);
+    setTvShowsPagesRow1(response.data.results);
+  };
+
+  useEffect(() => {
+    fetchTVShowsPagesRow1();
+  }, []);
+
   return (
     <View>
       <View style={styles.searchIcon}>
@@ -61,7 +77,44 @@ const TvShows = ({ navigation, navigation: { navigate }, dark, setDark }) => {
         ""
       )}
 
-      {/**  your code will go here  */}
+      <View style={styles.row1}>
+        <Text style={styles.text}>TV Shows Row 1</Text>
+
+        <View style={styles.row_posters}>
+          <ScrollView
+            horizontal={true}
+            contentContainerStyle={{}}
+            showsHorizontalScrollIndicator={false}
+            scrollEventThrottle={120}
+            decelerationRate="slow"
+            pagingEnabled
+          >
+            {tvShowsPagesRow1.map((tvShowsRow1, index) => {
+              return (
+                <TouchableHighlight
+                  onPress={() => navigate("tvShows", tvShowsRow1)}
+                  key={index}
+                  style={{
+                    borderRadius: 28,
+                    marginRight: 10,
+                    resizeMode: "contain",
+                    height: 230,
+                    width: 150,
+                  }}
+                >
+                  <Image
+                    style={{ transform: "scale: 4.1" }}
+                    style={styles.row_poster}
+                    source={{ uri: `${imgUrl}${tvShowsRow1.poster_path}` }}
+                  />
+                </TouchableHighlight>
+              );
+            })}
+          </ScrollView>
+        </View>
+      </View>
+
+      
     </View>
   );
 };
