@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
   },
   row_posters: {
     display: "flex",
-    flexDirection: "row",
+    flexDirection: "row", 
     justifyContent: "space-between",
     overflow: "hidden",
     margin: 5,
