@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import config from "../../../config";
 import axios from "axios";
+import { useTheme } from "../../DarkMood";
 
 import {
   Text,
@@ -12,6 +13,7 @@ import {
 import styles from "./styleScifiHorror";
 const imgUrl = "https://image.tmdb.org/t/p/original";
 const ScifiHorror = ({ navigation: { navigate } }) => {
+  const dark = useTheme();
   const [scifiHorror, setScifiHorror] = useState([]);
   const fetchScifiHorror = async () => {
     let URL = `https://api.themoviedb.org/3/discover/tv?api_key=${config.APIKEY}&with_networks=213`;
@@ -24,7 +26,7 @@ const ScifiHorror = ({ navigation: { navigate } }) => {
   }, []);
   return (
     <View style={styles.row1}>
-      <Text style={styles.text}>Scifi & Horror</Text>
+      <Text style={dark ? styles.textDark : styles.text}>Scifi & Horror</Text>
 
       <View style={styles.row_posters}>
         <ScrollView
