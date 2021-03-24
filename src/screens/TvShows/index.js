@@ -43,7 +43,7 @@ const TvShows = ({ navigation, navigation: { navigate }, dark, setDark }) => {
   };
 
   const fetchTVShowsPagesRow4 = async () => {
-    let URL = `https://api.themoviedb.org/3/discover/tv?api_key=${config.APIKEY}&language=en-US&sort_by=popularity.desc&page=3&timezone=America%2FNew_York&include_null_first_air_dates=false`;
+    let URL = `https://api.themoviedb.org/3/discover/tv?api_key=${config.APIKEY}&language=en-US&sort_by=popularity.desc&page=4&timezone=America%2FNew_York&include_null_first_air_dates=false`;
     const response = await axios.get(URL);
     setTvShowsPagesRow4(response.data.results);
   };
