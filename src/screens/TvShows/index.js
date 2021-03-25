@@ -11,11 +11,13 @@ import config from "../../../config";
 import axios from "axios";
 import styles from "./styleTVShows";
 import Search from "../../components/Banar/Search/Search";
+import { useTheme } from "../../DarkMood";
 import { useSelector } from "react-redux";
 
 const imgUrl = "https://image.tmdb.org/t/p/original";
 
 const TvShows = ({ navigation, navigation: { navigate } }) => {
+  const dark = useTheme();
   const movies = useSelector((state) => state.movies.movies);
   const text = useSelector((state) => state.movies.text);
 
@@ -64,7 +66,7 @@ const TvShows = ({ navigation, navigation: { navigate } }) => {
   }, []);
 
   return (
-    <View>
+    <View style={dark ? styles.rootDark : styles.root}>
       <ScrollView
         contentContainerStyle={{}}
         showsVerticalScrollIndicator={false}
@@ -79,7 +81,7 @@ const TvShows = ({ navigation, navigation: { navigate } }) => {
 
         {movies ? (
           <View style={styles.row1}>
-            <Text style={styles.text}>
+            <Text style={dark ? styles.textDark : styles.text}>
               {text ? `Results Of : ${text}` : ""}
             </Text>
 
@@ -121,8 +123,6 @@ const TvShows = ({ navigation, navigation: { navigate } }) => {
         )}
 
         <View style={styles.row1}>
-          <Text style={styles.text}>TV Shows Row 1</Text>
-
           <View style={styles.row_posters}>
             <ScrollView
               horizontal={true}
@@ -158,8 +158,6 @@ const TvShows = ({ navigation, navigation: { navigate } }) => {
         </View>
 
         <View style={styles.row1}>
-          <Text style={styles.text}>TV Shows Row 2</Text>
-
           <View style={styles.row_posters}>
             <ScrollView
               horizontal={true}
@@ -195,8 +193,6 @@ const TvShows = ({ navigation, navigation: { navigate } }) => {
         </View>
 
         <View style={styles.row1}>
-          <Text style={styles.text}>TV Shows Row 3</Text>
-
           <View style={styles.row_posters}>
             <ScrollView
               horizontal={true}
@@ -232,8 +228,6 @@ const TvShows = ({ navigation, navigation: { navigate } }) => {
         </View>
 
         <View style={styles.row1}>
-          <Text style={styles.text}>TV Shows Row 4</Text>
-
           <View style={styles.row_posters}>
             <ScrollView
               horizontal={true}
@@ -269,8 +263,6 @@ const TvShows = ({ navigation, navigation: { navigate } }) => {
         </View>
 
         <View style={styles.row1}>
-          <Text style={styles.text}>TV Shows Row 5</Text>
-
           <View style={styles.row_posters}>
             <ScrollView
               horizontal={true}
@@ -310,12 +302,3 @@ const TvShows = ({ navigation, navigation: { navigate } }) => {
 };
 
 export default TvShows;
-
-// const styles = StyleSheet.create({
-//   root: {
-//     flex: 1,
-//     backgroundColor: "#f5f5f5",
-//     alignItems: "center",
-//     justifyContent: "center",
-//   },
-// });
