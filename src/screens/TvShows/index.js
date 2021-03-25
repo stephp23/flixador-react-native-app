@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import config from "../../../config";
 import axios from "axios";
-import styles from "./styleTvShows";
+import styles from "./styleTVShows";
 import Search from "../../components/Banar/Search/Search";
 import { useSelector } from "react-redux";
 
@@ -68,20 +68,60 @@ const TvShows = ({ navigation, navigation: { navigate }, dark, setDark }) => {
   return (
     <View>
       <ScrollView
-      contentContainerStyle={{}}
-      showsVerticalScrollIndicator={false}
-      showsHorizontalScrollIndicator={false}
-      scrollEventThrottle={120}
-      decelerationRate="fast"
+        contentContainerStyle={{}}
+        showsVerticalScrollIndicator={false}
+        showsHorizontalScrollIndicator={false}
+        scrollEventThrottle={120}
+        decelerationRate="fast"
         pagingEnabled
       >
-      <View style={styles.searchIcon}>
-        <Search />
+        <View style={styles.searchIcon}>
+          <Search />
         </View>
-        
-      {movies ? (
+
+        {movies ? (
+          <View style={styles.row1}>
+            <Text style={styles.text}>{text ? `Results Of : ${text}` : ""}</Text>
+
+            <View style={styles.row_posters}>
+              <ScrollView
+                horizontal={true}
+                contentContainerStyle={{}}
+                showsHorizontalScrollIndicator={false}
+                scrollEventThrottle={120}
+                decelerationRate="slow"
+                pagingEnabled
+              >
+                {movies.map((searchMovies, index) => {
+                  return (
+                    <TouchableHighlight
+                      onPress={() => navigate("movie", searchMovies)}
+                      key={index}
+                      style={{
+                        borderRadius: 28,
+                        marginRight: 10,
+                        resizeMode: "contain",
+                        height: 230,
+                        width: 150,
+                      }}
+                    >
+                      <Image
+                        style={{ transform: "scale: 4.1" }}
+                        style={styles.row_poster}
+                        source={{ uri: `${imgUrl}${searchMovies.poster_path}` }}
+                      />
+                    </TouchableHighlight>
+                  );
+                })}
+              </ScrollView>
+            </View>
+          </View>
+        ) : (
+            ""
+          )}
+
         <View style={styles.row1}>
-          <Text style={styles.text}>{text ? `Results Of : ${text}` : ""}</Text>
+          <Text style={styles.text}>TV Shows Row 1</Text>
 
           <View style={styles.row_posters}>
             <ScrollView
@@ -92,10 +132,10 @@ const TvShows = ({ navigation, navigation: { navigate }, dark, setDark }) => {
               decelerationRate="slow"
               pagingEnabled
             >
-              {movies.map((searchMovies, index) => {
+              {tvShowsPagesRow1.map((tvShowsRow1, index) => {
                 return (
                   <TouchableHighlight
-                    onPress={() => navigate("movie", searchMovies)}
+                    onPress={() => navigate("tvShows", tvShowsRow1)}
                     key={index}
                     style={{
                       borderRadius: 28,
@@ -108,7 +148,7 @@ const TvShows = ({ navigation, navigation: { navigate }, dark, setDark }) => {
                     <Image
                       style={{ transform: "scale: 4.1" }}
                       style={styles.row_poster}
-                      source={{ uri: `${imgUrl}${searchMovies.poster_path}` }}
+                      source={{ uri: `${imgUrl}${tvShowsRow1.poster_path}` }}
                     />
                   </TouchableHighlight>
                 );
@@ -116,196 +156,156 @@ const TvShows = ({ navigation, navigation: { navigate }, dark, setDark }) => {
             </ScrollView>
           </View>
         </View>
-      ) : (
-        ""
-      )}
 
-      <View style={styles.row1}>
-        <Text style={styles.text}>TV Shows Row 1</Text>
+        <View style={styles.row1}>
+          <Text style={styles.text}>TV Shows Row 2</Text>
 
-        <View style={styles.row_posters}>
-          <ScrollView
-            horizontal={true}
-            contentContainerStyle={{}}
-            showsHorizontalScrollIndicator={false}
-            scrollEventThrottle={120}
-            decelerationRate="slow"
-            pagingEnabled
-          >
-            {tvShowsPagesRow1.map((tvShowsRow1, index) => {
-              return (
-                <TouchableHighlight
-                  onPress={() => navigate("tvShows", tvShowsRow1)}
-                  key={index}
-                  style={{
-                    borderRadius: 28,
-                    marginRight: 10,
-                    resizeMode: "contain",
-                    height: 230,
-                    width: 150,
-                  }}
-                >
-                  <Image
-                    style={{ transform: "scale: 4.1" }}
-                    style={styles.row_poster}
-                    source={{ uri: `${imgUrl}${tvShowsRow1.poster_path}` }}
-                  />
-                </TouchableHighlight>
-              );
-            })}
-          </ScrollView>
+          <View style={styles.row_posters}>
+            <ScrollView
+              horizontal={true}
+              contentContainerStyle={{}}
+              showsHorizontalScrollIndicator={false}
+              scrollEventThrottle={120}
+              decelerationRate="slow"
+              pagingEnabled
+            >
+              {tvShowsPagesRow2.map((tvShowsRow2, index) => {
+                return (
+                  <TouchableHighlight
+                    onPress={() => navigate("tvShows", tvShowsRow2)}
+                    key={index}
+                    style={{
+                      borderRadius: 28,
+                      marginRight: 10,
+                      resizeMode: "contain",
+                      height: 230,
+                      width: 150,
+                    }}
+                  >
+                    <Image
+                      style={{ transform: "scale: 4.1" }}
+                      style={styles.row_poster}
+                      source={{ uri: `${imgUrl}${tvShowsRow2.poster_path}` }}
+                    />
+                  </TouchableHighlight>
+                );
+              })}
+            </ScrollView>
+          </View>
         </View>
-      </View>
 
-      <View style={styles.row1}>
-        <Text style={styles.text}>TV Shows Row 2</Text>
+        <View style={styles.row1}>
+          <Text style={styles.text}>TV Shows Row 3</Text>
 
-        <View style={styles.row_posters}>
-          <ScrollView
-            horizontal={true}
-            contentContainerStyle={{}}
-            showsHorizontalScrollIndicator={false}
-            scrollEventThrottle={120}
-            decelerationRate="slow"
-            pagingEnabled
-          >
-            {tvShowsPagesRow2.map((tvShowsRow2, index) => {
-              return (
-                <TouchableHighlight
-                  onPress={() => navigate("tvShows", tvShowsRow2)}
-                  key={index}
-                  style={{
-                    borderRadius: 28,
-                    marginRight: 10,
-                    resizeMode: "contain",
-                    height: 230,
-                    width: 150,
-                  }}
-                >
-                  <Image
-                    style={{ transform: "scale: 4.1" }}
-                    style={styles.row_poster}
-                    source={{ uri: `${imgUrl}${tvShowsRow2.poster_path}` }}
-                  />
-                </TouchableHighlight>
-              );
-            })}
-          </ScrollView>
+          <View style={styles.row_posters}>
+            <ScrollView
+              horizontal={true}
+              contentContainerStyle={{}}
+              showsHorizontalScrollIndicator={false}
+              scrollEventThrottle={120}
+              decelerationRate="slow"
+              pagingEnabled
+            >
+              {tvShowsPagesRow3.map((tvShowsRow3, index) => {
+                return (
+                  <TouchableHighlight
+                    onPress={() => navigate("tvShows", tvShowsRow3)}
+                    key={index}
+                    style={{
+                      borderRadius: 28,
+                      marginRight: 10,
+                      resizeMode: "contain",
+                      height: 230,
+                      width: 150,
+                    }}
+                  >
+                    <Image
+                      style={{ transform: "scale: 4.1" }}
+                      style={styles.row_poster}
+                      source={{ uri: `${imgUrl}${tvShowsRow3.poster_path}` }}
+                    />
+                  </TouchableHighlight>
+                );
+              })}
+            </ScrollView>
+          </View>
         </View>
-      </View>
 
-      <View style={styles.row1}>
-        <Text style={styles.text}>TV Shows Row 3</Text>
+        <View style={styles.row1}>
+          <Text style={styles.text}>TV Shows Row 4</Text>
 
-        <View style={styles.row_posters}>
-          <ScrollView
-            horizontal={true}
-            contentContainerStyle={{}}
-            showsHorizontalScrollIndicator={false}
-            scrollEventThrottle={120}
-            decelerationRate="slow"
-            pagingEnabled
-          >
-            {tvShowsPagesRow3.map((tvShowsRow3, index) => {
-              return (
-                <TouchableHighlight
-                  onPress={() => navigate("tvShows", tvShowsRow3)}
-                  key={index}
-                  style={{
-                    borderRadius: 28,
-                    marginRight: 10,
-                    resizeMode: "contain",
-                    height: 230,
-                    width: 150,
-                  }}
-                >
-                  <Image
-                    style={{ transform: "scale: 4.1" }}
-                    style={styles.row_poster}
-                    source={{ uri: `${imgUrl}${tvShowsRow3.poster_path}` }}
-                  />
-                </TouchableHighlight>
-              );
-            })}
-          </ScrollView>
+          <View style={styles.row_posters}>
+            <ScrollView
+              horizontal={true}
+              contentContainerStyle={{}}
+              showsHorizontalScrollIndicator={false}
+              scrollEventThrottle={120}
+              decelerationRate="slow"
+              pagingEnabled
+            >
+              {tvShowsPagesRow4.map((tvShowsRow4, index) => {
+                return (
+                  <TouchableHighlight
+                    onPress={() => navigate("tvShows", tvShowsRow4)}
+                    key={index}
+                    style={{
+                      borderRadius: 28,
+                      marginRight: 10,
+                      resizeMode: "contain",
+                      height: 230,
+                      width: 150,
+                    }}
+                  >
+                    <Image
+                      style={{ transform: "scale: 4.1" }}
+                      style={styles.row_poster}
+                      source={{ uri: `${imgUrl}${tvShowsRow4.poster_path}` }}
+                    />
+                  </TouchableHighlight>
+                );
+              })}
+            </ScrollView>
+          </View>
         </View>
-      </View>
 
-      <View style={styles.row1}>
-        <Text style={styles.text}>TV Shows Row 4</Text>
 
-        <View style={styles.row_posters}>
-          <ScrollView
-            horizontal={true}
-            contentContainerStyle={{}}
-            showsHorizontalScrollIndicator={false}
-            scrollEventThrottle={120}
-            decelerationRate="slow"
-            pagingEnabled
-          >
-            {tvShowsPagesRow4.map((tvShowsRow4, index) => {
-              return (
-                <TouchableHighlight
-                  onPress={() => navigate("tvShows", tvShowsRow4)}
-                  key={index}
-                  style={{
-                    borderRadius: 28,
-                    marginRight: 10,
-                    resizeMode: "contain",
-                    height: 230,
-                    width: 150,
-                  }}
-                >
-                  <Image
-                    style={{ transform: "scale: 4.1" }}
-                    style={styles.row_poster}
-                    source={{ uri: `${imgUrl}${tvShowsRow4.poster_path}` }}
-                  />
-                </TouchableHighlight>
-              );
-            })}
-          </ScrollView>
+        <View style={styles.row1}>
+          <Text style={styles.text}>TV Shows Row 5</Text>
+
+          <View style={styles.row_posters}>
+            <ScrollView
+              horizontal={true}
+              contentContainerStyle={{}}
+              showsHorizontalScrollIndicator={false}
+              scrollEventThrottle={120}
+              decelerationRate="slow"
+              pagingEnabled
+            >
+              {tvShowsPagesRow5.map((tvShowsRow5, index) => {
+                return (
+                  <TouchableHighlight
+                    onPress={() => navigate("tvShows", tvShowsRow5)}
+                    key={index}
+                    style={{
+                      borderRadius: 28,
+                      marginRight: 10,
+                      resizeMode: "contain",
+                      height: 230,
+                      width: 150,
+                    }}
+                  >
+                    <Image
+                      style={{ transform: "scale: 4.1" }}
+                      style={styles.row_poster}
+                      source={{ uri: `${imgUrl}${tvShowsRow5.poster_path}` }}
+                    />
+                  </TouchableHighlight>
+                );
+              })}
+            </ScrollView>
+          </View>
         </View>
-      </View>
-
-
-      <View style={styles.row1}>
-        <Text style={styles.text}>TV Shows Row 5</Text>
-
-        <View style={styles.row_posters}>
-          <ScrollView
-            horizontal={true}
-            contentContainerStyle={{}}
-            showsHorizontalScrollIndicator={false}
-            scrollEventThrottle={120}
-            decelerationRate="slow"
-            pagingEnabled
-          >
-            {tvShowsPagesRow5.map((tvShowsRow5, index) => {
-              return (
-                <TouchableHighlight
-                  onPress={() => navigate("tvShows", tvShowsRow5)}
-                  key={index}
-                  style={{
-                    borderRadius: 28,
-                    marginRight: 10,
-                    resizeMode: "contain",
-                    height: 230,
-                    width: 150,
-                  }}
-                >
-                  <Image
-                    style={{ transform: "scale: 4.1" }}
-                    style={styles.row_poster}
-                    source={{ uri: `${imgUrl}${tvShowsRow5.poster_path}` }}
-                  />
-                </TouchableHighlight>
-              );
-            })}
-          </ScrollView>
-        </View>
-      </View>
-    </ScrollView>
+      </ScrollView>
     </View>
   );
 };
