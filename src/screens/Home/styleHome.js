@@ -7,6 +7,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  rootDark: {
+    flex: 1,
+    backgroundColor: "black",
+    alignItems: "center",
+    justifyContent: "center",
+  },
   row1: {
     marginLeft: 0,
     fontWeight: "bold",
@@ -30,6 +36,13 @@ const styles = StyleSheet.create({
 
   text: {
     color: "#111",
+    marginLeft: 20,
+    fontSize: 22,
+    marginBottom: 20,
+    marginTop: 20,
+  },
+  textDark: {
+    color: "white",
     marginLeft: 20,
     fontSize: 22,
     marginBottom: 20,

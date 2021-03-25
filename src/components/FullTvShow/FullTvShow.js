@@ -13,7 +13,7 @@ import config from "../../../config";
 import axios from "axios";
 import ButtonStyle from "../Banar/ButtonStyle/ButtonStyle";
 import { LinearGradient } from "expo-linear-gradient";
-
+const imgUrl = "https://image.tmdb.org/t/p/original";
 const FullTvShow = ({ route: { params }, navigation: { navigate } }) => {
   const { id } = params;
   const [fullTvShowBanar, setFullTvShowBanar] = useState([]);
@@ -83,7 +83,7 @@ const FullTvShow = ({ route: { params }, navigation: { navigate } }) => {
         pagingEnabled
       >
         <ImageBackground
-          resizeMode="contian"
+          resizeMode="cover"
           source={image}
           style={{
             height: 450,

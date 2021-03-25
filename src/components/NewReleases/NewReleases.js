@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import config from "../../../config";
 import axios from "axios";
+import { useTheme } from "../../DarkMood";
 
 import {
   Text,
@@ -12,6 +13,7 @@ import {
 import styles from "./styleNewReleases";
 const imgUrl = "https://image.tmdb.org/t/p/original";
 const NewReleases = ({ navigation: { navigate } }) => {
+  const dark = useTheme();
   const [newRelease, setNewRelease] = useState([]);
   const fetchNewRelease = async () => {
     let URL = `https://api.themoviedb.org/3/trending/all/week?api_key=${config.APIKEY}&language=en-US`;
@@ -24,7 +26,7 @@ const NewReleases = ({ navigation: { navigate } }) => {
   }, []);
   return (
     <View style={styles.row1}>
-      <Text style={styles.text}>New Releases</Text>
+      <Text style={dark ? styles.textDark : styles.text}>New Releases</Text>
 
       <View style={styles.row_posters}>
         <ScrollView

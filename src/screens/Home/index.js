@@ -26,9 +26,9 @@ const Home = ({ navigation, navigation: { navigate } }) => {
   const text = useSelector((state) => state.movies.text);
   const dark = useTheme();
   const updateDark = useThemeUpdate();
-  console.log(dark);
+
   return (
-    <View style={styles.root}>
+    <View style={dark ? styles.rootDark : styles.root}>
       <ScrollView
         contentContainerStyle={{}}
         showsVerticalScrollIndicator={false}
@@ -44,7 +44,7 @@ const Home = ({ navigation, navigation: { navigate } }) => {
         <View style={styles.btweenBtn}>
           {movies ? (
             <View style={styles.row1}>
-              <Text style={styles.text}>
+              <Text style={dark ? styles.textDark : styles.text}>
                 {text ? `Results Of : ${text}` : ""}
               </Text>
 
