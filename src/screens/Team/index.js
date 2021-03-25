@@ -67,23 +67,42 @@ const imageW = width * 0.7;
 const imageH = imageW * 1.54;
 
 export default () => {
+  const scrollX = React.useRef(new Animated.Value(0)).current;
   return (
     <View style={{ flex: 1, backgroundColor: '#000' }}>
       <StatusBar hidden />
       <View
-        style={StyleSheet.absoluteFillObject}>
+        style={StyleSheet.absoluteFillObject}
+      >
         {data.map((image, index) => {
-          return <Image
+          const inputRange = [
+            (index - 1) * width, // next
+            index * width, // current
+            (index + 1) * width // prev
+          ]
+          const opacity = scrollX.interpolate({
+            inputRange,
+            outputRange: [0, 1, 0]
+          })
+          return <Animated.Image
             key={`image-${index}`}
             source={{ uri: image }}
             style={[
-              StyleSheet.absoluteFillObject
+              StyleSheet.absoluteFillObject,
+              {
+                opacity
+              }
             ]}
+            blurRadius={50}
           />
         })}
       </View>
-      <FlatList
+      <Animated.FlatList
         data={data}
+        onScroll={Animated.event(
+          [{ nativeEvent: { contentOffset: { x: scrollX } } }],
+          { useNativeDriver: true }
+        )}
         keyExtractor={(_, index) => index.toString()}
         horizontal
         pagingEnabled
