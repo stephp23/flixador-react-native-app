@@ -13,12 +13,14 @@ import config from "../../../config";
 import axios from "axios";
 import ButtonStyle from "../Banar/ButtonStyle/ButtonStyle";
 import { LinearGradient } from "expo-linear-gradient";
+import { useTheme } from "../../DarkMood";
 
 import movieTrailer from "movie-trailer";
 import { useSelector } from "react-redux";
 const imgUrl = "https://image.tmdb.org/t/p/original";
 const FullMovie = ({ route: { params }, navigation: { navigate } }) => {
   const { id } = params;
+  const dark = useTheme();
   const [fullMoviebanar, setFullMoviebanar] = useState([]);
   const [fulltrailerUrl, setfullTrailerUrl] = useState("");
   const [similarMovie, SetsimilarMovie] = useState([]);

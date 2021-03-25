@@ -68,31 +68,26 @@ const Banar = () => {
         <View style={styles.search}>
           <Search />
         </View>
-        <View style={styles.banarinfo}>
-          <Text style={styles.title}>
-            {banar?.title || banar?.name || banar?.orignal_name}
-          </Text>
-        </View>
+        <View style={styles.viewInfo}>
+          <View style={styles.banarinfo}>
+            <Text style={styles.title}>
+              {banar?.title || banar?.name || banar?.orignal_name}
+            </Text>
+          </View>
 
-        <View tyle={styles.banarbuttons}>
-          <ButtonStyle
-            text="Play"
-            color="rgba(51, 51, 51, 0.5)"
-            onPress={() => handleClickMovie(banar)}
-          />
-          <Text style={styles.banarDescription}>
-            {truncate(banar?.overview, 150)}
-          </Text>
+          <View tyle={styles.banarbuttons}>
+            <ButtonStyle
+              text="Play"
+              color="rgba(51, 51, 51, 0.5)"
+              onPress={() => handleClickMovie(banar)}
+            />
+            <Text style={styles.banarDescription}>
+              {truncate(banar?.overview, 150)}
+            </Text>
+          </View>
         </View>
       </ImageBackground>
       <LinearGradient
-        // locations={[0, 0.2, 0.6, 0.93]}
-        // colors={[
-        //   "rgba(0,0,0,0.5)",
-        //   "rgba(0,0,0,0)",
-        //   "rgba(0,0,0,0)",
-        //   "rgba(0,0,0,1)",
-        // ]}
         locations={[0, 1.0]}
         colors={["rgba(0,0,0,0)", "rgba(0,0,0,0.80)"]}
         style={{
