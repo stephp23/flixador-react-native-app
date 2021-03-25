@@ -68,7 +68,7 @@ const FullMovie = ({ route: { params }, navigation: { navigate } }) => {
   };
 
   return (
-    <View style={styles.root}>
+    <View style={dark ? styles.rootDark : styles.root}>
       <ScrollView
         contentContainerStyle={{
           height: "auto",
@@ -114,21 +114,27 @@ const FullMovie = ({ route: { params }, navigation: { navigate } }) => {
           </View>
         </ImageBackground>
         <View>
-          <Text style={styles.subjact}>
+          <Text style={dark ? styles.subjactDark : styles.subjact}>
             {fullMoviebanar?.title ||
               fullMoviebanar?.name ||
               fullMoviebanar?.orignal_name}
           </Text>
-          <Text style={styles.description}>
+          <Text style={dark ? styles.descriptionDark : styles.description}>
             Run Time : {fullMoviebanar.runtime} min
           </Text>
-          <Text style={styles.description}> {fullMoviebanar.release_date}</Text>
-          <Text style={styles.description}>
+          <Text style={dark ? styles.descriptionDark : styles.description}>
+            {" "}
+            {fullMoviebanar.release_date}
+          </Text>
+          <Text style={dark ? styles.descriptionDark : styles.description}>
             {truncate(fullMoviebanar?.overview, 300)}
           </Text>
         </View>
         <View style={styles.similarView}>
-          <Text style={styles.similarText}> Similar Movies</Text>
+          <Text style={dark ? styles.similarTextDark : styles.similarText}>
+            {" "}
+            Similar Movies
+          </Text>
         </View>
         <View style={styles.row1}>
           <View style={styles.row_posters}>
@@ -178,6 +184,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  rootDark: {
+    flex: 1,
+    backgroundColor: "black",
+    alignItems: "center",
+    justifyContent: "center",
+  },
   title: {
     paddingLeft: 40,
     marginTop: 200,
@@ -191,7 +203,17 @@ const styles = StyleSheet.create({
     margin: 20,
     fontSize: 20,
   },
+  subjactDark: {
+    color: "white",
+    margin: 20,
+    fontSize: 20,
+  },
   description: {
+    margin: 10,
+    fontSize: 15,
+  },
+  descriptionDark: {
+    color: "white",
     margin: 10,
     fontSize: 15,
   },
@@ -199,6 +221,10 @@ const styles = StyleSheet.create({
     margin: 18,
   },
   similarText: {
+    fontSize: 18,
+  },
+  similarTextDark: {
+    color: "white",
     fontSize: 18,
   },
   row1: {
