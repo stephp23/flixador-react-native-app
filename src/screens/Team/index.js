@@ -70,6 +70,18 @@ export default () => {
   return (
     <View style={{ flex: 1, backgroundColor: '#000' }}>
       <StatusBar hidden />
+      <View
+        style={StyleSheet.absoluteFillObject}>
+        {data.map((image, index) => {
+          return <Image
+            key={`image-${index}`}
+            source={{ uri: image }}
+            style={[
+              StyleSheet.absoluteFillObject
+            ]}
+          />
+        })}
+      </View>
       <FlatList
         data={data}
         keyExtractor={(_, index) => index.toString()}
