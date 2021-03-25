@@ -149,7 +149,7 @@ const FullTvShow = ({ route: { params }, navigation: { navigate } }) => {
               {similarTvShow.map((similarTvShows, index) => {
                 return (
                   <TouchableHighlight
-                    onPress={() => navigate("movie", similarTvShows)}
+                    onPress={() => navigate("TvShow", similarTvShows)}
                     key={index}
                     style={{
                       borderRadius: 28,

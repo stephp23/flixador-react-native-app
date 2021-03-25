@@ -36,6 +36,9 @@ const styles = StyleSheet.create({
     left: 20,
     marginTop: 50,
   },
+  viewInfo: {
+    marginTop: 5,
+  },
 });
 
 export default styles;
