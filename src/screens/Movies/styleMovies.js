@@ -1,14 +1,37 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
+  root: {
+    flex: 1,
+    backgroundColor: "#f5f5f5",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  rootDark: {
+    flex: 1,
+    backgroundColor: "black",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
   searchIcon: {
     left: 20,
     marginTop: 50,
+  },
+  movieView: {
+    marginTop: -80,
+  },
+  rowsearch: {
+    marginLeft: 0,
+    fontWeight: "bold",
+    color: "white",
+    marginBottom: 80,
   },
   row1: {
     marginLeft: 0,
     fontWeight: "bold",
     color: "white",
+    marginTop: 20,
   },
   row_posters: {
     display: "flex",
@@ -27,6 +50,13 @@ const styles = StyleSheet.create({
 
   text: {
     color: "#111",
+    marginLeft: 20,
+    fontSize: 25,
+    marginBottom: 20,
+    marginTop: 20,
+  },
+  textDark: {
+    color: "white",
     marginLeft: 20,
     fontSize: 25,
     marginBottom: 20,

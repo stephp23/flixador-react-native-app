@@ -44,7 +44,7 @@ const Home = ({ navigation, navigation: { navigate } }) => {
         <View style={styles.btweenBtn}>
           {movies ? (
             <View style={styles.row1}>
-              <Text style={styles.text}>
+              <Text style={dark ? styles.textDark : styles.text}>
                 {text ? `Results Of : ${text}` : ""}
               </Text>
 
