@@ -107,7 +107,17 @@ export default () => {
         horizontal
         pagingEnabled
         renderItem={({ item }) => {
-          return <View style={{ width, justifyContent: 'center', alignItems: 'center' }}>
+          return <View style={{
+            width, justifyContent: 'center', alignItems: 'center',
+            shadowColor: '#000',
+            shadowOpacity: 1,
+            shadowOffset: {
+              width: 0,
+              height: 0,
+            },
+            shadowRadius: 20
+
+          }}>
             <Image source={{ uri: item }} style={{
               width: imageW,
               height: imageH,
@@ -115,9 +125,10 @@ export default () => {
               borderRadius: 16,
 
             }} />
+            <Text>Name</Text>
           </View>
         }}
       />
-    </View>
+    </View >
   );
 };
