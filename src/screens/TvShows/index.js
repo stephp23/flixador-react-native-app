@@ -121,8 +121,8 @@ const TvShows = ({ navigation, navigation: { navigate } }) => {
             </View>
           </View>
         ) : (
-          ""
-        )}
+            ""
+          )}
 
         <View style={styles.row1}>
           <View style={styles.row_posters}>
