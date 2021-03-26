@@ -41,6 +41,13 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     marginTop: 20,
   },
+  textDark: {
+    color: "white",
+    marginLeft: 20,
+    fontSize: 22,
+    marginBottom: 20,
+    marginTop: 20,
+  },
   switchButton: {
     marginTop: 10,
     marginLeft: 10,

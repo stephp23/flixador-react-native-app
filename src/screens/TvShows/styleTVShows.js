@@ -1,6 +1,18 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
+  root: {
+    flex: 1,
+    backgroundColor: "#f5f5f5",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  rootDark: {
+    flex: 1,
+    backgroundColor: "black",
+    alignItems: "center",
+    justifyContent: "center",
+  },
   searchIcon: {
     left: 20,
     marginTop: 50,
@@ -9,10 +21,11 @@ const styles = StyleSheet.create({
     marginLeft: 0,
     fontWeight: "bold",
     color: "white",
+    marginBottom: 15,
   },
   row_posters: {
     display: "flex",
-    flexDirection: "row", 
+    flexDirection: "row",
     justifyContent: "space-between",
     overflow: "hidden",
     margin: 5,
@@ -27,6 +40,13 @@ const styles = StyleSheet.create({
 
   text: {
     color: "#111",
+    marginLeft: 20,
+    fontSize: 25,
+    marginBottom: 20,
+    marginTop: 20,
+  },
+  textDark: {
+    color: "white",
     marginLeft: 20,
     fontSize: 25,
     marginBottom: 20,
