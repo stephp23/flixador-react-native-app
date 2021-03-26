@@ -7,8 +7,10 @@ import {
   TouchableHighlight,
   Image,
 } from "react-native";
+
 import config from "../../../config";
 import axios from "axios";
+
 import styles from "./styleTVShows";
 import Search from "../../components/Banar/Search/Search";
 import { useTheme } from "../../DarkMood";
@@ -119,8 +121,8 @@ const TvShows = ({ navigation: { navigate } }) => {
             </View>
           </View>
         ) : (
-          ""
-        )}
+            ""
+          )}
 
         <View style={styles.row1}>
           <View style={styles.row_posters}>
