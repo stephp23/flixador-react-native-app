@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { WebView } from "react-native-webview";
 import {
   StyleSheet,
   Text,
@@ -21,9 +22,11 @@ const imgUrl = "https://image.tmdb.org/t/p/original";
 const FullMovie = ({ route: { params }, navigation: { navigate } }) => {
   const { id } = params;
   const dark = useTheme();
+
   const [fullMoviebanar, setFullMoviebanar] = useState([]);
   const [fulltrailerUrl, setfullTrailerUrl] = useState("");
   const [similarMovie, SetsimilarMovie] = useState([]);
+
   const fetchFullMovie = async () => {
     let URL = `https://api.themoviedb.org/3/movie/${id}?api_key=${config.APIKEY}`;
     const response = await axios.get(URL);
@@ -67,6 +70,22 @@ const FullMovie = ({ route: { params }, navigation: { navigate } }) => {
     uri: `https://image.tmdb.org/t/p/original${fullMoviebanar?.backdrop_path}`,
   };
 
+  const playVideo = () => {
+    return (
+      <WebView
+        source={{
+          uri: `https://www.youtube.com/watch?v=${fulltrailerUrl}`,
+        }}
+      />
+    );
+  };
+  // console.log(fulltrailerUrl);
+  // console.log(fulltrailerUrl);
+
+  // useEffect(() => {
+  //   playVideo();
+  // }, [fulltrailerUrl]);
+
   return (
     <View style={dark ? styles.rootDark : styles.root}>
       <ScrollView
@@ -109,10 +128,12 @@ const FullMovie = ({ route: { params }, navigation: { navigate } }) => {
             <ButtonStyle
               text="Play"
               color="rgba(51, 51, 51, 0.5)"
-              onPress={() => handleClickMovie()}
+              onPress={() => handleClickMovie(fullMoviebanar)}
             />
           </View>
         </ImageBackground>
+        <View>{playVideo()}</View>
+
         <View>
           <Text style={dark ? styles.subjactDark : styles.subjact}>
             {fullMoviebanar?.title ||

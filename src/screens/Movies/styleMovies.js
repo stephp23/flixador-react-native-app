@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     marginLeft: 0,
     fontWeight: "bold",
     color: "white",
-    marginTop: 20,
+    marginTop: 30,
   },
   row_posters: {
     display: "flex",

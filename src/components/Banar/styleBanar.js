@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     marginTop: 50,
   },
   viewInfo: {
-    marginTop: 5,
+    marginTop: 20,
   },
 });
 

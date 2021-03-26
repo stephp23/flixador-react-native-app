@@ -9,8 +9,6 @@ import styles from "./styleBanar";
 import Search from "./Search/Search";
 
 const Banar = () => {
-  const video = useRef(null);
-  const [status, setStatus] = useState({});
   const [banar, setBanar] = useState([]);
   const [banartrailerUrl, setBanarTrailerUrl] = useState("");
   const handelBaner = async () => {
@@ -41,7 +39,7 @@ const Banar = () => {
     if (banartrailerUrl) {
       setBanarTrailerUrl("");
     } else {
-      movieTrailer(banar?.name || banar?.title || banar?.orignal_name || "")
+      movieTrailer(banar?.name || "")
         .then((url) => {
           const urlParams = new URLSearchParams(new URL(url).search);
           setBanarTrailerUrl(urlParams.get("v"));
