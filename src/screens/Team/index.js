@@ -40,9 +40,9 @@ export default () => {
       >
         {data.map(({ image }, index) => {
           const inputRange = [
-            (index - 1) * width, // next
-            index * width, // current
-            (index + 1) * width // prev
+            (index - 1) * width,
+            index * width,
+            (index + 1) * width
           ]
           const opacity = scrollX.interpolate({
             inputRange,
