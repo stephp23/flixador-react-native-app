@@ -7,23 +7,41 @@ import TvShows from "../../screens/TvShows";
 import FullMovie from "../../components/FullMovie/FullMovie";
 import FullTvShow from "../../components/FullTvShow/FullTvShow";
 import { color } from "react-native-reanimated";
+import { Ionicons } from "@expo/vector-icons";
 
 const HomeStack = createStackNavigator();
 const MoviesStack = createStackNavigator();
 const TeamStack = createStackNavigator();
 const TvShowsStack = createStackNavigator();
 
-export const HomeStackScreen = () => {
+export const HomeStackScreen = ({ navigation, navigation: { navigate } }) => {
   return (
     <HomeStack.Navigator
       screenOptions={{
         headerTransparent: true,
         title: "",
+        headerTitle: " ",
+        headerTintColor: "red",
       }}
     >
       <HomeStack.Screen name="Home" component={Home} />
 
-      <HomeStack.Screen name="movie" component={FullMovie} />
+      <HomeStack.Screen
+        name="movie"
+        component={FullMovie}
+        // options={{
+        //   navigationOptions: ({ navigation }) => ({
+        //     headerLeft: (
+        //       <Ionicons
+        //         name="arrow-back-outline"
+        //         size={24}
+        //         color="black"
+        //         onPress={() => navigation.navigate("Home")}
+        //       />
+        //     ),
+        //   }),
+        // }}
+      />
     </HomeStack.Navigator>
   );
 };
@@ -40,6 +58,8 @@ export const TvShowsStackScreen = () => {
       screenOptions={{
         headerTransparent: true,
         title: "",
+        headerTitle: " ",
+        headerTintColor: "red",
       }}
     >
       <TvShowsStack.Screen name="TvShows" component={TvShows} />

@@ -18,7 +18,7 @@ import { useSelector } from "react-redux";
 
 const imgUrl = "https://image.tmdb.org/t/p/original";
 
-const TvShows = ({ navigation, navigation: { navigate } }) => {
+const TvShows = ({ navigation: { navigate } }) => {
   const dark = useTheme();
   const movies = useSelector((state) => state.movies.movies);
   const text = useSelector((state) => state.movies.text);
