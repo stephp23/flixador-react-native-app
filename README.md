@@ -162,14 +162,14 @@ This project was conceptualized by building wireframes and prototypes using Figm
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
 [contributors-shield]: https://img.shields.io/github/contributors/stephp23/flixador-react-redux-app
-[contributors-url]: https://github.com/stephp23/flixador-react-redux-app
-[forks-shield]: https://img.shields.io/github/forks/stephp23/flixador-react-redux-app
-[forks-url]: https://github.com/stephp23/flixador-react-redux-app
-[stars-shield]: https://img.shields.io/github/stars/stephp23/flixador-react-redux-app
-[stars-url]: https://github.com/stephp23/flixador-react-redux-app
-[issues-shield]: https://img.shields.io/github/issues/stephp23/flixador-react-redux-app
-[issues-url]: https://github.com/stephp23/flixador-react-redux-app
-[license-shield]: https://img.shields.io/github/license/stephp23/flixador-react-redux-app
-[license-url]: https://github.com/stephp23/flixador-react-redux-app
+[contributors-url]: https://github.com/stephp23/flixador-react-native-app
+[forks-shield]: https://img.shields.io/github/forks/stephp23/flixador-react-native-app
+[forks-url]: https://github.com/stephp23/flixador-react-native-app
+[stars-shield]: https://img.shields.io/github/stars/stephp23/flixador-react-native-app
+[stars-url]: https://github.com/stephp23/flixador-react-native-app
+[issues-shield]: https://img.shields.io/github/issues/stephp23/flixador-react-native-app
+[issues-url]: https://github.com/stephp23/flixador-react-native-app
+[license-shield]: https://img.shields.io/github/license/stephp23/flixador-react-native-app
+[license-url]: https://github.com/stephp23/flixador-react-native-app
 
 
