@@ -8470,6 +8470,11 @@ react-native-screens@~2.15.2:
   resolved "https://registry.yarnpkg.com/react-native-screens/-/react-native-screens-2.15.2.tgz#a449700e895b462937211ec72ed6f09652758f06"
   integrity sha512-CagNf2APXkVoRlF3Mugr264FbKbrBg9eXUkqhIPVeZB8EsdS8XPrnt99yj/pzmT+yJMBY0dGrjXT8+68WYh6YQ==
 
+react-native-simple-youtube-player@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/react-native-simple-youtube-player/-/react-native-simple-youtube-player-0.1.0.tgz#51b680af525caba6e59ee5ea8cbe4b98874622a6"
+  integrity sha512-Vwu1YzfbB2jqbFp1kaN7I0x0Tr0ilscT/6/vaHYNZT4y0JJKPiwx0RRuBPhWxZaJrIP8SH/ouDVOGvGA4aAPXw==
+
 react-native-vector-icons@^8.1.0:
   version "8.1.0"
   resolved "https://registry.yarnpkg.com/react-native-vector-icons/-/react-native-vector-icons-8.1.0.tgz#e8ee2b17bc4d9f636da1c6f67feee8e2a850c3d8"

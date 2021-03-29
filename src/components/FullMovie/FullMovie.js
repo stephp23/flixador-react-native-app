@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { WebView } from "react-native-webview";
+
 import {
   StyleSheet,
   Text,
@@ -24,7 +25,7 @@ const FullMovie = ({ route: { params }, navigation: { navigate } }) => {
   const dark = useTheme();
 
   const [fullMoviebanar, setFullMoviebanar] = useState([]);
-  const [fulltrailerUrl, setfullTrailerUrl] = useState("");
+  const [movieTrailerUrl, setMovieTrailerUrl] = useState("");
   const [similarMovie, SetsimilarMovie] = useState([]);
 
   const fetchFullMovie = async () => {
@@ -41,7 +42,7 @@ const FullMovie = ({ route: { params }, navigation: { navigate } }) => {
 
   useEffect(() => {
     fetchSimilarMovie();
-  }, []);
+  }, [similarMovie]);
   useEffect(() => {
     fetchFullMovie();
   }, [fullMoviebanar]);
@@ -49,42 +50,28 @@ const FullMovie = ({ route: { params }, navigation: { navigate } }) => {
   const truncate = (str, n) => {
     return str?.length > n ? str.substr(0, n - 1) + "..." : str;
   };
-  const handleClickMovie = (fullMoviebanar) => {
-    if (fulltrailerUrl) {
-      setfullTrailerUrl("");
-    } else {
-      movieTrailer(
-        fullMoviebanar?.name ||
-          fullMoviebanar?.title ||
-          fullMoviebanar?.orignal_name ||
-          ""
-      )
-        .then((url) => {
-          const urlParams = new URLSearchParams(new URL(url).search);
-          setfullTrailerUrl(urlParams.get("v"));
-        })
-        .catch(() => console.log("Temporary Unavailable"));
-    }
-  };
+
   const image = {
     uri: `https://image.tmdb.org/t/p/original${fullMoviebanar?.backdrop_path}`,
   };
 
-  const playVideo = () => {
-    return (
-      <WebView
-        source={{
-          uri: `https://www.youtube.com/watch?v=${fulltrailerUrl}`,
-        }}
-      />
-    );
+  const handleClickMovie = (fullMoviebanar) => {
+    const string =
+      fullMoviebanar?.title ||
+      fullMoviebanar?.name ||
+      fullMoviebanar?.orignal_name ||
+      "";
+
+    const response = movieTrailer(string.toString())
+      .then((res) => setMovieTrailerUrl(res))
+      .catch((error) => console.log(error));
+
+    return response;
   };
-  // console.log(fulltrailerUrl);
-  // console.log(fulltrailerUrl);
 
   // useEffect(() => {
-  //   playVideo();
-  // }, [fulltrailerUrl]);
+  //   console.log(ayman.length);
+  // }, [ayman]);
 
   return (
     <View style={dark ? styles.rootDark : styles.root}>
@@ -132,25 +119,33 @@ const FullMovie = ({ route: { params }, navigation: { navigate } }) => {
             />
           </View>
         </ImageBackground>
-        <View>{playVideo()}</View>
 
-        <View>
-          <Text style={dark ? styles.subjactDark : styles.subjact}>
-            {fullMoviebanar?.title ||
-              fullMoviebanar?.name ||
-              fullMoviebanar?.orignal_name}
-          </Text>
-          <Text style={dark ? styles.descriptionDark : styles.description}>
-            Run Time : {fullMoviebanar.runtime} min
-          </Text>
-          <Text style={dark ? styles.descriptionDark : styles.description}>
-            {" "}
-            {fullMoviebanar.release_date}
-          </Text>
-          <Text style={dark ? styles.descriptionDark : styles.description}>
-            {truncate(fullMoviebanar?.overview, 300)}
-          </Text>
-        </View>
+        {movieTrailerUrl.length > 0 && (
+          <WebView
+            containerStyle={{ marginTop: 20 }}
+            javaScriptEnabled={true}
+            domStorageEnabled={true}
+            source={{ uri: `${movieTrailerUrl ? movieTrailerUrl : ""}` }}
+            style={{ height: 260, width: 380, backgroundColor: "black" }}
+          />
+        )}
+
+        <Text style={dark ? styles.subjactDark : styles.subjact}>
+          {fullMoviebanar?.title ||
+            fullMoviebanar?.name ||
+            fullMoviebanar?.orignal_name}
+        </Text>
+        <Text style={dark ? styles.descriptionDark : styles.description}>
+          Run Time : {fullMoviebanar.runtime} min
+        </Text>
+        <Text style={dark ? styles.descriptionDark : styles.description}>
+          {" "}
+          {fullMoviebanar.release_date}
+        </Text>
+        <Text style={dark ? styles.descriptionDark : styles.description}>
+          {truncate(fullMoviebanar?.overview, 300)}
+        </Text>
+
         <View style={styles.similarView}>
           <Text style={dark ? styles.similarTextDark : styles.similarText}>
             {" "}
