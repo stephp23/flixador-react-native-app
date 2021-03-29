@@ -1,6 +1,7 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
+
   searchIcon: {
     left: 20,
     marginTop: 50,

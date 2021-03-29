@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { WebView } from "react-native-webview";
+import movieTrailer from "movie-trailer";
 import {
   StyleSheet,
   Text,
@@ -53,21 +55,17 @@ const FullTvShow = ({ route: { params }, navigation: { navigate } }) => {
     },
   };
   const handleClickMovie = (fullTvShowBanar) => {
-    if (fulltrailerUrl) {
-      setfullTrailerUrl("");
-    } else {
-      movieTrailer(
-        fullTvShowBanar?.name ||
-          fullTvShowBanar?.title ||
-          fullTvShowBanar?.orignal_name ||
-          ""
-      )
-        .then((url) => {
-          const urlParams = new URLSearchParams(new URL(url).search);
-          setfullTrailerUrl(urlParams.get("v"));
-        })
-        .catch(() => console.log("Temporary Unavailable"));
-    }
+    const string =
+      fullTvShowBanar?.title ||
+      fullTvShowBanar?.name ||
+      fullTvShowBanar?.orignal_name ||
+      "";
+
+    const response = movieTrailer(string.toString())
+      .then((res) => setfullTrailerUrl(res))
+      .catch((error) => console.log(error));
+
+    return response;
   };
   const image = {
     uri: `https://image.tmdb.org/t/p/original${fullTvShowBanar?.backdrop_path}`,
@@ -114,10 +112,19 @@ const FullTvShow = ({ route: { params }, navigation: { navigate } }) => {
             <ButtonStyle
               text="Play"
               color="rgba(51, 51, 51, 0.5)"
-              onPress={() => handleClickMovie()}
+              onPress={() => handleClickMovie(fullTvShowBanar)}
             />
           </View>
         </ImageBackground>
+        {fulltrailerUrl.length > 0 && (
+          <WebView
+            containerStyle={{ marginTop: 20 }}
+            javaScriptEnabled={true}
+            domStorageEnabled={true}
+            source={{ uri: `${fulltrailerUrl ? fulltrailerUrl : ""}` }}
+            style={{ height: 260, width: 380, backgroundColor: "black" }}
+          />
+        )}
         <View>
           <Text style={dark ? styles.subjactDark : styles.subjact}>
             {fullTvShowBanar?.title ||
