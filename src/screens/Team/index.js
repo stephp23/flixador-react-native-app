@@ -1,67 +1,30 @@
 import React from "react";
 import { StatusBar, FlatList, Image, Animated, Text, View, Dimensions, StyleSheet, TouchableOpacity } from 'react-native';
-const { width, height } = Dimensions.get('screen');
-
 // import "./styleTeam";
 
-
-// const styles = StyleSheet.create({
-//   container: {
-//     paddingTop: 50,
-//   },
-//   stretch: {
-//     width: 50,
-//     height: 200,
-//     resizeMode: 'stretch',
-//   },
-// });
-
-// const Team = () => {
-//   return (
-
-//     <View>
-//       <ScrollView>
-//         <Text style={styles.text}>
-//           Leesel Fraser
-//       </Text>
-//         <Image
-//           style={styles.row_poster}
-//           source={require('../../../assets/leesel.png')}
-//         />
-//         <Text style={styles.text}>
-//           Stephanie Pena
-//       </Text>
-//         <Image
-//           style={styles.row_poster}
-//           source={require('../../../assets/stephanie.png')}
-//         />
-//         <Text style={styles.text}>
-//           Katherine Fernandez
-//       </Text>
-//         <Image
-//           style={styles.row_poster}
-//           source={require('../../../assets/katherine.png')}
-//         />
-//         <Text style={styles.text}>
-//           Ayman Gebril
-//       </Text>
-//         <Image
-//           style={styles.row_poster}
-//           source={require('../../../assets/ayman.png')}
-//         />
-//       </ScrollView>
-//     </View>
-//   )
-// };
-
-// export default Team;
+const { width, height } = Dimensions.get('screen');
 
 const data = [
-  'https://i.redd.it/bjqhu3ax2cz01.jpg',
-  'https://graffiti-artist.net/wp-content/uploads/2019/02/nyc-graffiti-expedia.jpg',
-  'https://assets.mycast.io/posters/adventures-in-babysitting-2022-fan-casting-poster-24041-large.jpg?1577835849',
-  'https://mir-s3-cdn-cf.behance.net/project_modules/disp/add637105058085.5f70f03e2a6c0.png'
-
+  {
+    image: require('../../../assets/stephanie.png'),
+    name: 'Stephanie Pena',
+    role: 'Front End Web Developer'
+  },
+  {
+    image: require('../../../assets/leesel.png'),
+    name: 'Leesel Fraser',
+    role: 'Fullstack Web Developer'
+  },
+  {
+    image: require('../../../assets/ayman.png'),
+    name: 'Ayman Gebril',
+    role: 'Fullstack Web Developer'
+  },
+  {
+    image: require('../../../assets/katherine.png'),
+    name: 'Katherine Fernandez',
+    role: 'Product Design'
+  }
 ];
 
 const imageW = width * 0.7;
@@ -75,11 +38,11 @@ export default () => {
       <View
         style={StyleSheet.absoluteFillObject}
       >
-        {data.map((image, index) => {
+        {data.map(({ image }, index) => {
           const inputRange = [
-            (index - 1) * width, // next
-            index * width, // current
-            (index + 1) * width // prev
+            (index - 1) * width,
+            index * width,
+            (index + 1) * width
           ]
           const opacity = scrollX.interpolate({
             inputRange,
@@ -87,11 +50,13 @@ export default () => {
           })
           return <Animated.Image
             key={`image-${index}`}
-            source={{ uri: image }}
+            source={image}
             style={[
               StyleSheet.absoluteFillObject,
               {
-                opacity
+                opacity,
+                width,
+                height
               }
             ]}
             blurRadius={50}
@@ -119,14 +84,28 @@ export default () => {
             shadowRadius: 20
 
           }}>
-            <Image source={{ uri: item }} style={{
+            <Text style={{
+              color: 'white',
+              fontSize: 30,
+              marginBottom: 30,
+              fontFamily: "Cochin"
+
+            }} >{item.name}</Text>
+            <Image source={item.image} style={{
               width: imageW,
               height: imageH,
               resizeMode: 'cover',
               borderRadius: 16,
 
             }} />
-            <Text>Name</Text>
+
+            <Text style={{
+              color: 'white',
+              fontSize: 20,
+              marginTop: 30,
+              fontFamily: "Helvetica"
+
+            }} >{item.role}</Text>
           </View>
         }}
       />
