@@ -9,8 +9,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/stephp23/flixador-react-redux-app">
-    <img src="src\imagesREADME\baby_cheetah.png" alt="Cheetah">
+  <a href="https://github.com/stephp23/flixador-react-native-app">
     <img src="src\imagesREADME\banner.png" alt="Logo">
   </a>
 
@@ -19,14 +18,14 @@
   <p align="center">
     What are you in the mood to watch?
     <br />
-    <a href="https://github.com/stephp23/flixador-react-redux-app"><strong>🔍Explore the Docs »</strong></a>
+    <a href="https://github.com/stephp23/flixador-react-native-app"><strong>🔍Explore the Docs »</strong></a>
     <br />
     <br />
     <a href="">👀 View Demo</a>
     ·
-    <a href="https://github.com/stephp23/flixador-react-redux-app">🐛Report Bug</a>
+    <a href="https://github.com/stephp23/flixador-react-native-app">🐛Report Bug</a>
     ·
-    <a href="https://github.com/stephp23/flixador-react-redux-app">✍🏽Request Feature</a>
+    <a href="https://github.com/stephp23/flixador-react-native-app">✍🏽Request Feature</a>
   </p>
 </p>
 
@@ -70,31 +69,31 @@
 
 Flixador is a movie searching app for those that want to keep up with the latest in movie releases. You can scroll through hundreds of movies and series titles right from the home screen. In the mood to only watch a series or only movies. You can also browse through hundreds of titles and their descriptions!
 
- <a href="https://github.com/stephp23/flixador-react-redux-app">
+ <a href="https://github.com/stephp23/flixador-react-native-app">
     <img src="src\imagesREADME\banner.png" alt="Logo">
   </a>
 
 ## Wireframes - Desktop
 
-<a href="https://github.com/stephp23/flixador-react-redux-app">
+<a href="https://github.com/stephp23/flixador-react-native-app">
     <img src="src\imagesREADME\desktop.png" alt="Logo">
   </a>
  
  ## Wireframes - Tablet
 
- <a href="https://github.com/stephp23/flixador-react-redux-app">
+ <a href="https://github.com/stephp23/flixador-react-native-app">
     <img src="src\imagesREADME\tablet.png" alt="Logo">
   </a>
 
 ## Wireframes - Mobile
 
-  <a href="https://github.com/stephp23/flixador-react-redux-app">
+  <a href="https://github.com/stephp23/flixador-react-native-app">
     <img src="src\imagesREADME\mobileapp.png" alt="Logo">
   </a>
 
 ## Component Hierarchy
 
-<a href="https://github.com/stephp23/flixador-react-redux-app">
+<a href="https://github.com/stephp23/flixador-react-native-app">
   <img src="src/imagesREADME/componenthierarchy.png" alt="ComponentHierachy">
   </a>
 
@@ -138,6 +137,7 @@ This project was conceptualized by building wireframes and prototypes using Figm
 - [JavaScript](https://javascript.com)
 - [ReactJS](https://reactjs.org)
 - [themoviedbAPI](https://www.themoviedb.org/documentation/api)
+- [MovieTrailerPackage](https://www.npmjs.com/package/movie-trailer)
 
 <!-- ACKNOWLEDGEMENTS -->
 
