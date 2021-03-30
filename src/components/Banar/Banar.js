@@ -7,10 +7,11 @@ import { ImageBackground, Text, View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import styles from "./styleBanar";
 import Search from "./Search/Search";
+import { WebView } from "react-native-webview";
 
 const Banar = () => {
   const [banar, setBanar] = useState([]);
-  const [banartrailerUrl, setBanarTrailerUrl] = useState("");
+  const [fulltrailerUrl, setfullTrailerUrl] = useState("");
   const handelBaner = async () => {
     const response = await axios.get(
       `https://api.themoviedb.org/3/discover/tv?api_key=${config.APIKEY}&with_networks=213`
@@ -36,16 +37,13 @@ const Banar = () => {
   };
 
   const handleClickMovie = (banar) => {
-    if (banartrailerUrl) {
-      setBanarTrailerUrl("");
-    } else {
-      movieTrailer(banar?.name || "")
-        .then((url) => {
-          const urlParams = new URLSearchParams(new URL(url).search);
-          setBanarTrailerUrl(urlParams.get("v"));
-        })
-        .catch(() => console.log("Temporary Unavailable"));
-    }
+    const string = banar?.title || banar?.name || banar?.orignal_name || "";
+
+    const response = movieTrailer(string.toString())
+      .then((res) => setfullTrailerUrl(res))
+      .catch((error) => console.log(error));
+
+    return response;
   };
 
   const image = {
@@ -95,6 +93,15 @@ const Banar = () => {
           height: 118,
         }}
       />
+      {fulltrailerUrl.length > 0 && (
+        <WebView
+          containerStyle={{ marginTop: 20 }}
+          javaScriptEnabled={true}
+          domStorageEnabled={true}
+          source={{ uri: `${fulltrailerUrl ? fulltrailerUrl : ""}` }}
+          style={{ height: 260, width: 380, backgroundColor: "black" }}
+        />
+      )}
     </View>
   );
 };
