@@ -23,7 +23,7 @@ const data = [
   {
     image: require('../../../assets/katherine.png'),
     name: 'Katherine Fernandez',
-    role: 'Product Design'
+    role: 'Product Designer'
   }
 ];
 
