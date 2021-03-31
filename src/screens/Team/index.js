@@ -1,5 +1,5 @@
 import React from "react";
-import { StatusBar, FlatList, Image, Animated, Text, View, Dimensions, StyleSheet, TouchableOpacity } from 'react-native';
+import { StatusBar, FlatList, Image, Animated, Text, View, Dimensions, StyleSheet, TouchableOpacity, Linking} from 'react-native';
 // import "./styleTeam";
 
 const { width, height } = Dimensions.get('screen');
@@ -8,22 +8,26 @@ const data = [
   {
     image: require('../../../assets/stephanie.png'),
     name: 'Stephanie Pena',
-    role: 'Front End Web Developer'
+    role: 'Front End Web Developer',
+    linkedin: 'https://linkedin.com/leesel'
   },
   {
     image: require('../../../assets/leesel.png'),
     name: 'Leesel Fraser',
-    role: 'Fullstack Web Developer'
+    role: 'Fullstack Web Developer',
+    linkedin: 'https://linkedin.com/leesel'
   },
   {
     image: require('../../../assets/ayman.png'),
     name: 'Ayman Omer',
-    role: 'Fullstack Web Developer'
+    role: 'Fullstack Web Developer',
+    linkedin: 'https://linkedin.com/leesel'
   },
   {
     image: require('../../../assets/katherine.png'),
     name: 'Katherine Fernandez',
-    role: 'Product Designer'
+    role: 'Product Designer',
+    linkedin: 'https://linkedin.com/leesel'
   }
 ];
 
@@ -92,14 +96,15 @@ export default () => {
               fontWeight: "bold",
 
             }} >{item.name}</Text>
-            <Image source={item.image} style={{
-              width: imageW,
-              height: imageH,
-              resizeMode: 'cover',
-              borderRadius: 16,
+            <TouchableOpacity onPress={ ()=>{ Linking.openURL(item.linkedin)}} >
+              <Image source={item.image} style={{
+                width: imageW,
+                height: imageH,
+                resizeMode: 'cover',
+                borderRadius: 16,
 
-            }} />
-
+              }} />
+            </TouchableOpacity>
             <Text style={{
               color: 'white',
               fontSize: 20,
