@@ -17,13 +17,13 @@ const data = [
   },
   {
     image: require('../../../assets/ayman.png'),
-    name: 'Ayman Gebril',
+    name: 'Ayman Omer',
     role: 'Fullstack Web Developer'
   },
   {
     image: require('../../../assets/katherine.png'),
     name: 'Katherine Fernandez',
-    role: 'Product Design'
+    role: 'Product Designer'
   }
 ];
 
@@ -88,7 +88,8 @@ export default () => {
               color: 'white',
               fontSize: 30,
               marginBottom: 30,
-              fontFamily: "Cochin"
+              fontFamily: "Optima",
+              fontWeight: "bold",
 
             }} >{item.name}</Text>
             <Image source={item.image} style={{
@@ -103,7 +104,8 @@ export default () => {
               color: 'white',
               fontSize: 20,
               marginTop: 30,
-              fontFamily: "Helvetica"
+              fontFamily: "Optima",
+              fontWeight: "bold",
 
             }} >{item.role}</Text>
           </View>
