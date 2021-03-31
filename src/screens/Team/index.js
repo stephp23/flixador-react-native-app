@@ -17,7 +17,7 @@ const data = [
   },
   {
     image: require('../../../assets/ayman.png'),
-    name: 'Ayman Gebril',
+    name: 'Ayman Omer',
     role: 'Fullstack Web Developer'
   },
   {
@@ -88,7 +88,7 @@ export default () => {
               color: 'white',
               fontSize: 30,
               marginBottom: 30,
-              fontFamily: "Cochin"
+              fontFamily: "Helvetica"
 
             }} >{item.name}</Text>
             <Image source={item.image} style={{
