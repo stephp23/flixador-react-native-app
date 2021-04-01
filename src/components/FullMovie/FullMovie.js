@@ -69,9 +69,6 @@ const FullMovie = ({ route: { params }, navigation: { navigate } }) => {
     return response;
   };
 
-  // useEffect(() => {
-  //   console.log(ayman.length);
-  // }, [ayman]);
 
   return (
     <View style={dark ? styles.rootDark : styles.root}>
